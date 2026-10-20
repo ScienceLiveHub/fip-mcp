@@ -1,0 +1,58 @@
+{
+ "id": "fiesta-bio:licence",
+ "community": "fiesta-bio",
+ "topic": "licence",
+ "question": "R1.1-D",
+ "expected": [
+  "CC0 1.0",
+  "CC BY 4.0"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which licence should I put on my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "B",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "The FIESTA Bioimaging FAIR Implementation Profile (FIP) accepts two licences for datasets, and the same two for metadata:\n\n- **CC0 1.0**: public-domain dedication. Anyone can reuse the data for any purpose, including commercial use, without asking and without having to credit you.\n- **CC BY 4.0**: anyone can share and adapt the data, but they must credit you.\n\nI'd pick **CC0 1.0** because it puts the fewest limits on reuse, and you can then use one licence for both your data and your metadata. Choose CC BY 4.0 instead if you, your funder or your institution need attribution to be legally required.\n\nRECOMMENDATION: CC0 1.0 (http://purl.org/np/RAq55jS4TCF-u0HLARDjWevzMv8k-NY7737bSJVzRAY2w#CC0-1.0)",
+ "isError": false,
+ "costUsd": 0.0647128,
+ "seconds": 14.5,
+ "stderr": ""
+}

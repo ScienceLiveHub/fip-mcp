@@ -1,0 +1,40 @@
+{
+ "id": "fiesta-bio:licence",
+ "community": "fiesta-bio",
+ "topic": "licence",
+ "question": "R1.1-D",
+ "expected": [
+  "CC0 1.0",
+  "CC BY 4.0"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which licence should I put on my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "Use **Creative Commons Attribution 4.0 International (CC BY 4.0)**.\n\n- It is the standard licence for open research data in bioimaging. The BioImage Archive, the Image Data Resource (IDR) and Zenodo all accept it, and Galaxy-based FAIR workflows commonly use it.\n- It lets anyone reuse, combine and redistribute your images as long as they credit you, which covers FAIR principle R1.1 (clear, machine-readable licence).\n- In your metadata (for example RO-Crate or OME-Zarr), give the licence as its SPDX identifier `CC-BY-4.0` or its URL, https://creativecommons.org/licenses/by/4.0/. That way Galaxy and repositories can read it automatically.\n- If you want no conditions at all, CC0 1.0 is the alternative. Datasets with human or patient data may need a restricted-access agreement instead.\n\nI couldn't open your community's FAIR Implementation Profile (FIP) from here, so this is based on common practice in the field. Check the licence that profile lists before you commit.\n\nRECOMMENDATION: Creative Commons Attribution 4.0 International (CC BY 4.0)",
+ "isError": false,
+ "costUsd": 0.0338232,
+ "seconds": 9.3,
+ "stderr": ""
+}

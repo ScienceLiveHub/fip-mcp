@@ -1,0 +1,40 @@
+{
+ "id": "fiesta-eo:repository",
+ "community": "fiesta-eo",
+ "topic": "repository",
+ "question": "F4-D",
+ "expected": [
+  "NIRD-RDA",
+  "Zenodo"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Where should I deposit my image datasets so that they are findable?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "For Earth Observation image data in this community, **Zenodo** is the most likely fit:\n\n- **Findability:** Each deposit gets a DOI and rich, searchable metadata (DataCite), and it is indexed by OpenAIRE and Google Dataset Search.\n- **Galaxy integration:** Galaxy can import data straight from Zenodo by URL or DOI, and Galaxy training material and workflows already use it widely.\n- **Formats:** It accepts EO formats such as GeoTIFF, NetCDF and Zarr. Large or tiled datasets can be split across versioned records.\n\nTo help people find your data:\n- Add good keywords, a spatial and temporal description, and the sensor or platform.\n- Use an open licence such as CC-BY.\n- Link the dataset to the Galaxy workflow that uses it, ideally one published on WorkflowHub.\n- If the data are derived products, also list them in a STAC catalogue or the relevant Copernicus or ESA portal.\n\nI couldn't check your community's FAIR Implementation Profile from here, so this is based on general knowledge. If the profile names a different repository, follow it.\n\nRECOMMENDATION: Zenodo",
+ "isError": false,
+ "costUsd": 0.0359112,
+ "seconds": 10.3,
+ "stderr": ""
+}

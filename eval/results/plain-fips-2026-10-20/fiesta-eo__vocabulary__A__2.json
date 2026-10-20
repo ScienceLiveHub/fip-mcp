@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-eo:vocabulary",
+ "community": "fiesta-eo",
+ "topic": "vocabulary",
+ "question": "I2-D",
+ "expected": [
+  "NetCDF CF-1.11"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which vocabulary should I use to annotate my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I couldn't look up your community's FAIR Implementation Profile (FIP) from here, so this answer is based on what Earth Observation communities usually do, not on FIESTA's own declaration.\n\n- **Don't just copy the parent community's choice.** The \"FAIR Image Data Workflows in Galaxy\" community mostly uses EDAM / EDAM-Bioimaging, which fits bioimaging tools and workflows. It doesn't describe Earth Observation variables well.\n- **For EO datasets, the usual choice is the CF Standard Name Table** from the Climate and Forecast conventions. It names physical variables like `surface_temperature` or `leaf_area_index`, works natively with NetCDF and Zarr, and Galaxy's climate and EO tools understand it.\n- **You can add other vocabularies on top:** GCMD Science Keywords for discovery-level keywords, and EDAM for describing the Galaxy tools and workflow steps.\n\nCheck FIESTA's FIP declaration, if it has one, to confirm the exact resource.\n\nRECOMMENDATION: CF Standard Name Table (Climate and Forecast conventions)",
+ "isError": false,
+ "costUsd": 0.0360112,
+ "seconds": 9.1,
+ "stderr": ""
+}

@@ -1,0 +1,57 @@
+{
+ "id": "fiesta-eo:format",
+ "community": "fiesta-eo",
+ "topic": "format",
+ "question": "I1-D",
+ "expected": [
+  "NetCDF"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which file format should I use for my image datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "B",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "Use **NetCDF** for your image datasets. That's the data format the FIESTA Earth Observation community chose in its FAIR Implementation Profile. It's a standard, machine-independent format built for array-based scientific data, which suits EO imagery.\n\nFor the metadata records that go with your datasets, the same profile specifies **JSON-LD**.\n\nReference: http://purl.org/np/RAdLEtIqBBprmFUyN3rnpq_30o8G35R95_YqNYEdKmX6M#NetCDF\n\nRECOMMENDATION: NetCDF",
+ "isError": false,
+ "costUsd": 0.0550894,
+ "seconds": 17.2,
+ "stderr": ""
+}

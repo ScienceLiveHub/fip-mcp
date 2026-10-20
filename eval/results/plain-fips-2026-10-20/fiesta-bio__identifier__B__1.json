@@ -1,0 +1,57 @@
+{
+ "id": "fiesta-bio:identifier",
+ "community": "fiesta-bio",
+ "topic": "identifier",
+ "question": "F1-D",
+ "expected": [
+  "URI"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). What kind of persistent identifier should my datasets have?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "B",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "The FIESTA Bioimaging FAIR Implementation Profile (FIP) says datasets should use **URIs** as their globally unique, persistent and resolvable identifiers (question F1-D). Metadata records should use URIs too (F1-MD). The profile lists no other identifier scheme, either current or planned.\n\n\"URI\" is a broad category. For the identifier to stay persistent, it should be one your repository commits to keeping resolvable over time, such as a URI it mints, a w3id/PURL, or a DOI written as a URI (`https://doi.org/...`). Don't use a plain file or server path. That is general good practice, not something the community profile specifies.\n\nSource: FIESTA Bioimaging FIP, https://w3id.org/np/RAiEW_g7wsXXMJINFJ3Qx7h2avPu1rx4yp1SE7Mw8jFkU\n\nRECOMMENDATION: URI (http://purl.org/np/RA5-OsT0-sjRbcoFEGfOzkrcFtExipMRmoLErzg5QWL7c#URI)",
+ "isError": false,
+ "costUsd": 0.0602612,
+ "seconds": 15.0,
+ "stderr": ""
+}

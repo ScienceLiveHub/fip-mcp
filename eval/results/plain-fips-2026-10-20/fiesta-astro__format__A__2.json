@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-astro:format",
+ "community": "fiesta-astro",
+ "topic": "format",
+ "question": "I1-D",
+ "expected": [
+  "Flexible Image Transport System"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which file format should I use for my image datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "For astronomy image data, use **FITS (Flexible Image Transport System)**. It's the long-standing community standard, endorsed by the IAU and IVOA. It stores the image arrays together with their metadata (header keywords, WCS coordinates) in one file. Most astronomy tools (Astropy, DS9, CASA and others) read it, and so do Galaxy's astronomy tools.\n\nFor very large or cloud-based multidimensional data, the wider FAIR imaging community is moving toward chunked formats such as OME-Zarr. For astronomy datasets, though, FITS is the most interoperable and FAIR-aligned choice.\n\nI answered from general knowledge. I didn't check your community's FAIR Implementation Profile, so it's worth confirming that FIESTA's profile lists FITS.\n\nRECOMMENDATION: FITS (Flexible Image Transport System)",
+ "isError": false,
+ "costUsd": 0.0316512,
+ "seconds": 9.3,
+ "stderr": ""
+}

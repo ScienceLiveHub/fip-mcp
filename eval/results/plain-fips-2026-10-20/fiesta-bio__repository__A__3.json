@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-bio:repository",
+ "community": "fiesta-bio",
+ "topic": "repository",
+ "question": "F4-D",
+ "expected": [
+  "Image Data Resource"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). Where should I deposit my image datasets so that they are findable?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "For bioimaging data, the community's FAIR practice is to use a domain-specific, curated repository rather than a general-purpose one:\n\n- **BioImage Archive (EMBL-EBI):** This is the main place to deposit images tied to publications. It gives each dataset an accession (S-BIAD\u2026), indexes it in EBI search, describes it with REMBI metadata and supports OME-Zarr/OME-TIFF. Galaxy workflows can pull data from it directly.\n- **Image Data Resource (IDR):** It takes curated, high-value reference datasets, often after they have gone into the BioImage Archive.\n- **Zenodo:** Use it only as a fallback for things that don't fit the above, such as Galaxy workflow outputs or supplementary files. It gives a DOI, but its bioimaging metadata is weaker.\n\nWhichever you choose, add rich metadata (REMBI/OME), use open formats (OME-Zarr/OME-TIFF) and cite the accession in your papers and Galaxy histories. These suggestions come from general practice in the field. I didn't check your community's own FAIR profile, so confirm against it if one has been published.\n\nRECOMMENDATION: BioImage Archive (EMBL-EBI)",
+ "isError": false,
+ "costUsd": 0.035291199999999995,
+ "seconds": 10.2,
+ "stderr": ""
+}

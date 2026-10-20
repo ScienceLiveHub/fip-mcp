@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-astro:provenance",
+ "community": "fiesta-astro",
+ "topic": "provenance",
+ "question": "R1.2-D",
+ "expected": [
+  "PROV-O"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). How should I describe the provenance of my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "Because your community sits under *FAIR Image Data Workflows in Galaxy*, the simplest approach is to let Galaxy record provenance for you and export it in a standard format:\n\n- **Run your processing as Galaxy workflows or histories.** Galaxy automatically records every tool, version, parameter, input and output.\n- **Export runs as Workflow Run RO-Crates.** Galaxy does this natively, using the Workflow Run Crate profiles. They package the workflow, its inputs and outputs, and a structured record of how it was run, based on schema.org and W3C PROV concepts. This covers FAIR principle R1.2 (detailed provenance) in a machine-readable form that other Galaxy communities also use.\n- **Astronomy-specific add-on (optional):** if your data goes into Virtual Observatory services, you can also map key steps to the IVOA Provenance Data Model so astronomy archives can read them. Use it alongside the RO-Crate, not as a replacement.\n- **Practical tips:** give datasets persistent identifiers, link the RO-Crate to your published data in the metadata, and record instrument and observation details (for example FITS header keywords) as inputs.\n\nI couldn't check your community's FAIR Implementation Profile (its list of agreed standards) directly. If it names a different provenance standard, follow that one.\n\nRECOMMENDATION: Workflow Run RO-Crate (Galaxy's native RO-Crate provenance export)",
+ "isError": false,
+ "costUsd": 0.0397952,
+ "seconds": 12.3,
+ "stderr": ""
+}

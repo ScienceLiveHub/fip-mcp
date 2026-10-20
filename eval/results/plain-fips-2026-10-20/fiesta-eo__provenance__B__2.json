@@ -1,0 +1,57 @@
+{
+ "id": "fiesta-eo:provenance",
+ "community": "fiesta-eo",
+ "topic": "provenance",
+ "question": "R1.2-D",
+ "expected": [
+  "NetCDF CF-1.11"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). How should I describe the provenance of my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "B",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "According to the FIESTA Earth Observation FAIR Implementation Profile (FIP), the community's answer to principle R1.2 is:\n\n- **Provenance of your datasets:** use the **NetCDF CF-1.11** conventions (Climate and Forecast Metadata Convention v1.11). Record lineage in the CF/global attributes, such as `history`, `source`, `institution` and `references`. Spec: https://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html\n- **Provenance of your metadata records:** use **RO-Crate** (https://w3id.org/ro/crate). This also suits packaging Galaxy workflow runs together with their inputs and outputs.\n\nRECOMMENDATION: NetCDF CF-1.11 (CF Metadata Conventions v1.11)",
+ "isError": false,
+ "costUsd": 0.057768,
+ "seconds": 10.0,
+ "stderr": ""
+}

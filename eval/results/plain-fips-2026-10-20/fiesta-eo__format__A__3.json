@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-eo:format",
+ "community": "fiesta-eo",
+ "topic": "format",
+ "question": "I1-D",
+ "expected": [
+  "NetCDF"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which file format should I use for my image datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "For Earth Observation imagery in Galaxy-based FAIR workflows, use **Zarr**, following the **GeoZarr** conventions.\n\n- **Why Zarr:** It stores large multi-dimensional arrays (time \u00d7 band \u00d7 y \u00d7 x) in chunks, so tools can read only the parts they need from cloud storage. It also carries self-describing metadata and works directly with xarray, which Galaxy's EO and climate tools use.\n- **Why GeoZarr:** It adds standard geospatial metadata, such as CF conventions, the coordinate reference system and multiscale pyramids. This makes your datasets interoperable and reusable, which covers the \"I\" and \"R\" in FAIR.\n- **Alternatives:** Use Cloud-Optimized GeoTIFF (COG) for single 2-D rasters or scenes. Use NetCDF-4/CF if you exchange data with climate-community tools.\n- **Bioimaging:** If your work overlaps with the bioimaging side of the \"FAIR Image Data Workflows\" community, OME-Zarr is the equivalent choice, built on the same Zarr foundation.\n\nThere were no community documents in the working directory to check, so this is based on current community practice. Confirm it against the FIESTA community's FAIR Implementation Profile if one exists.\n\nRECOMMENDATION: Zarr (GeoZarr conventions)",
+ "isError": false,
+ "costUsd": 0.0358352,
+ "seconds": 10.0,
+ "stderr": ""
+}

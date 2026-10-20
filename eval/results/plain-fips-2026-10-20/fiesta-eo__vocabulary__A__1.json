@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-eo:vocabulary",
+ "community": "fiesta-eo",
+ "topic": "vocabulary",
+ "question": "I2-D",
+ "expected": [
+  "NetCDF CF-1.11"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which vocabulary should I use to annotate my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I couldn't find your community's FAIR Implementation Profile (FIP) here, so this is my best guess and you should confirm it.\n\n- **Parent community:** \"FAIR Image Data Workflows in Galaxy\" annotates tools and data with the **EDAM ontology**, mainly its bioimaging extension. That fits life-science images, not Earth Observation variables.\n- **FIESTA (Earth Observation):** A sub-community's own choices take priority over the parent's. For EO and climate data, the usual choice is the **CF Standard Name Table** from the Climate and Forecast conventions, which works well with NetCDF and Galaxy's climate and EO tools. **NASA GCMD Science Keywords** is a common extra for catalogue-level discovery.\n\nCheck FIESTA's published FIP. If it names a different vocabulary, use that one.\n\nRECOMMENDATION: CF (Climate and Forecast) Standard Name Table",
+ "isError": false,
+ "costUsd": 0.0368072,
+ "seconds": 9.2,
+ "stderr": ""
+}

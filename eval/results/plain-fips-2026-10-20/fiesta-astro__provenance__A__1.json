@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-astro:provenance",
+ "community": "fiesta-astro",
+ "topic": "provenance",
+ "question": "R1.2-D",
+ "expected": [
+  "PROV-O"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). How should I describe the provenance of my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I couldn't look up your community's FAIR Implementation Profile (FIP), so this is based on general knowledge of how Galaxy and the community work.\n\n- **Record provenance with Galaxy's built-in export.** Galaxy can export histories and workflow invocations as Workflow Run RO-Crates. These capture the inputs, tools and versions, parameters, outputs and who ran what. They are built on schema.org and use PROV-style terms, so they're machine-readable and match what the wider Galaxy imaging community uses.\n- **Add astronomy-specific detail where needed.** If you need provenance that fits the Virtual Observatory, such as observation or reduction steps and links to FITS headers, map it to the IVOA Provenance Data Model (ProvDM), which is based on W3C PROV.\n- **Good practice:** use persistent identifiers (DOIs or ORCIDs) for datasets, software and people. Record tool versions and container images, and publish the crate together with the data, for example on Zenodo or WorkflowHub.\n- **Check with your community:** if FIESTA has a published FIP, see which provenance resource it names and use that.\n\nRECOMMENDATION: Workflow Run RO-Crate (RO-Crate provenance profile, as exported by Galaxy)",
+ "isError": false,
+ "costUsd": 0.03837120000000001,
+ "seconds": 10.6,
+ "stderr": ""
+}

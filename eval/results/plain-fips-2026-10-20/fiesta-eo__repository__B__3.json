@@ -1,0 +1,58 @@
+{
+ "id": "fiesta-eo:repository",
+ "community": "fiesta-eo",
+ "topic": "repository",
+ "question": "F4-D",
+ "expected": [
+  "NIRD-RDA",
+  "Zenodo"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Where should I deposit my image datasets so that they are findable?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "B",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "I checked the FIESTA Earth Observation FAIR Implementation Profile (FIP). It lists two places where the community's datasets get indexed and found:\n\n- **Zenodo**: the community uses it for both the data and the metadata records. It's a general-purpose repository run by CERN and OpenAIRE, and each deposit gets a DOI.\n- **NIRD Research Data Archive (NIRD-RDA)**: also listed for data. It's the Norwegian national archive, so it fits best if you're a Norwegian researcher or your project already uses Sigma2.\n\nZenodo is the only one listed for both data and metadata, so it's the safest default.\n\nRECOMMENDATION: Zenodo",
+ "isError": false,
+ "costUsd": 0.0596244,
+ "seconds": 22.0,
+ "stderr": ""
+}

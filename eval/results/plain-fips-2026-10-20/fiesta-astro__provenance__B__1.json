@@ -1,0 +1,57 @@
+{
+ "id": "fiesta-astro:provenance",
+ "community": "fiesta-astro",
+ "topic": "provenance",
+ "question": "R1.2-D",
+ "expected": [
+  "PROV-O"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). How should I describe the provenance of my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "B",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "The FIESTA Astronomy FAIR Implementation Profile (FIP) names one schema for provenance: **PROV-O**, the W3C ontology that expresses the PROV data model. It's the choice both for your datasets (FAIR principle R1.2, data) and for your metadata records (R1.2, metadata). No other options are listed as current or planned.\n\nIn practice, describe provenance in terms of three things:\n- **Entities**: raw frames, calibration files, reduced images.\n- **Activities**: Galaxy workflow steps such as calibration, stacking and source extraction.\n- **Agents**: you, your instrument or telescope, and the Galaxy tools and their versions.\n\nLink them with `prov:wasGeneratedBy`, `prov:used`, `prov:wasDerivedFrom` and `prov:wasAttributedTo`. Record the same kind of provenance for the metadata records themselves.\n\nReference: http://purl.org/np/RAnkRRbkigfQpL2ERK1jVqwA9Brwu1GcORfTbfQMWHfC4#PROV-O\n\nRECOMMENDATION: PROV-O",
+ "isError": false,
+ "costUsd": 0.057989399999999997,
+ "seconds": 10.3,
+ "stderr": ""
+}

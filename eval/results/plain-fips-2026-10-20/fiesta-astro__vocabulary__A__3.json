@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-astro:vocabulary",
+ "community": "fiesta-astro",
+ "topic": "vocabulary",
+ "question": "I2-D",
+ "expected": [
+  "IVOA Vocabulary: Unified Astronomy Thesaurus"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which vocabulary should I use to annotate my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "For astronomy datasets, the usual choice is the **Unified Astronomy Thesaurus (UAT)**. It's an open, community-maintained SKOS vocabulary that IVOA, AAS journals, ADS and the major data archives use, so your subject keywords will match what other astronomy services understand.\n\nI couldn't look up your community's FAIR Implementation Profile (I had no file or web access), so this is based on general astronomy practice. Check the profile in case it names a different vocabulary.\n\nYou can also add:\n- **IVOA UCDs (Unified Content Descriptors)** to describe individual columns and FITS header quantities.\n- **EDAM-bioimaging** if you also need to describe image-analysis operations in Galaxy workflows.\n\nRECOMMENDATION: Unified Astronomy Thesaurus (UAT)",
+ "isError": false,
+ "costUsd": 0.0331272,
+ "seconds": 7.6,
+ "stderr": ""
+}

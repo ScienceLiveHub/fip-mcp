@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-astro:provenance",
+ "community": "fiesta-astro",
+ "topic": "provenance",
+ "question": "R1.2-D",
+ "expected": [
+  "PROV-O"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). How should I describe the provenance of my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "For the R1.2 provenance principle, I'd go with **Workflow Run RO-Crate**, specifically its Provenance Run Crate profile. I couldn't check your community's published FAIR Implementation Profile, so this is my best judgement rather than its declared choice.\n\n- **Why this one:** Galaxy can export a workflow invocation directly as a Workflow Run RO-Crate. The crate records the inputs, outputs, tool versions, parameters, who ran it and when. It's built on schema.org and maps to W3C PROV-O, so it fits the Galaxy image-workflow setting your community is part of.\n- **How to apply it:** Run your processing as Galaxy workflows, export each invocation as an RO-Crate, and publish that crate alongside the dataset. Link the crate from the dataset's metadata, for example in Zenodo or your archive.\n- **Astronomy-specific option:** If your data also go into Virtual Observatory services, you can add the **IVOA Provenance Data Model** (ProvenanceDM). It is itself based on W3C PROV.\n- **Check the profile:** If the FIESTA or Galaxy imaging FIP names a different provenance resource, use that one to stay consistent with the community.\n\nRECOMMENDATION: Workflow Run RO-Crate (Provenance Run Crate profile)",
+ "isError": false,
+ "costUsd": 0.037027199999999996,
+ "seconds": 9.7,
+ "stderr": ""
+}

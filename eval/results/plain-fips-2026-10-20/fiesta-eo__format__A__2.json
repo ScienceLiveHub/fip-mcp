@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-eo:format",
+ "community": "fiesta-eo",
+ "topic": "format",
+ "question": "I1-D",
+ "expected": [
+  "NetCDF"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which file format should I use for my image datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I don't have access to the FIESTA Earth Observation community's FAIR Implementation Profile from here, so I couldn't confirm which format it officially declares. This recommendation is based on common practice in the field.\n\n- **Use GeoTIFF, preferably Cloud-Optimized GeoTIFF (COG).** It's an OGC standard, it's open and widely supported (GDAL, QGIS, rasterio, Galaxy's geospatial tools), and it stores the coordinate system and georeferencing inside the file. The COG variant also lets software read parts of a large image over HTTP, which suits cloud and Galaxy workflows.\n- **Watch out for the parent community's default.** The broader \"FAIR Image Data Workflows in Galaxy\" community leans toward OME-TIFF/OME-Zarr. Those are bioimaging formats and don't handle Earth Observation georeferencing well.\n- **For large multi-dimensional data cubes** (time series, many bands), Zarr or NetCDF with CF conventions are good alternatives.\n- **Before you commit, check your community's FIP** (for example on the FIP Wizard or in the FIESTA documentation). If it names a different format, follow the FIP.\n\nRECOMMENDATION: Cloud-Optimized GeoTIFF (COG)",
+ "isError": false,
+ "costUsd": 0.0397512,
+ "seconds": 10.4,
+ "stderr": ""
+}

@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-eo:provenance",
+ "community": "fiesta-eo",
+ "topic": "provenance",
+ "question": "R1.2-D",
+ "expected": [
+  "NetCDF CF-1.11"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). How should I describe the provenance of my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "For FAIR principle R1.2 (\"detailed provenance\"), describe your provenance in a machine-readable way using a standard provenance vocabulary. Don't rely on free-text notes.\n\n- **Record what was used and what was produced:** the source EO products (for example Sentinel or Landsat scene IDs and DOIs), the processing steps, the tool versions, the parameters and the agents (people and software). Model these as Entities, Activities and Agents in **W3C PROV-O**.\n- **Link to the Galaxy workflow:** Galaxy can export a workflow invocation as a **Workflow Run RO-Crate**. That package bundles the inputs, outputs, workflow definition and parameters, and its terms map onto PROV. It's the easiest way to get provenance out of Galaxy.\n- **Use persistent identifiers** (DOIs or other PIDs) for inputs, outputs and the workflow itself, for example on WorkflowHub. Put the provenance link in your dataset's metadata record, such as a STAC item or DataCite `relatedIdentifier`.\n\nI couldn't check what the FIESTA / \"FAIR Image Data Workflows in Galaxy\" FAIR Implementation Profile actually declares for R1.2. Please confirm against it, for example in the FIP Wizard or the community's published FIP. If the profile names a specific resource, use that.\n\nRECOMMENDATION: W3C PROV-O (PROV Ontology)",
+ "isError": false,
+ "costUsd": 0.0383752,
+ "seconds": 11.4,
+ "stderr": ""
+}

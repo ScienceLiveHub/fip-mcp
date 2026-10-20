@@ -1,0 +1,57 @@
+{
+ "id": "fiesta-bio:identifier",
+ "community": "fiesta-bio",
+ "topic": "identifier",
+ "question": "F1-D",
+ "expected": [
+  "URI"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). What kind of persistent identifier should my datasets have?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "B",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "The FIESTA Bioimaging community's FAIR Implementation Profile (latest version, question F1-D) names **URI** as its persistent identifier for datasets. It names URI for metadata records too (F1-MD). Nothing else is listed as current or planned.\n\nA URI is a broad category, not a specific scheme like a DOI or ARK. The profile doesn't pick a particular resolver. In practice, give each dataset a stable URI that resolves globally and won't change. If your repository issues an identifier in URI form, that fits the profile.\n\nRECOMMENDATION: URI",
+ "isError": false,
+ "costUsd": 0.0571912,
+ "seconds": 15.8,
+ "stderr": ""
+}

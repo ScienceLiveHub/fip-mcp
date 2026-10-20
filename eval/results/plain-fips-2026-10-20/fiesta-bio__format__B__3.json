@@ -1,0 +1,55 @@
+{
+ "id": "fiesta-bio:format",
+ "community": "fiesta-bio",
+ "topic": "format",
+ "question": "I1-D",
+ "expected": "NOT_DECLARED",
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which file format should I use for my image datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "B",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "The FIESTA Bioimaging FAIR Implementation Profile (FIP) doesn't name a file format for image datasets. Question I1-D (which formats the community uses for datasets) was left open, so there is no community-agreed answer.\n\n- **Metadata records:** the only agreed format is **JSON**.\n- **Image data:** this is a gap in the profile. Raise it with the FIESTA Bio FIP maintainers so the community can decide. Until then, OME-TIFF or OME-Zarr are common choices in bioimaging, but that's my suggestion, not something the community has agreed.\n\nRECOMMENDATION: None \u2014 the FIESTA Bio FIP has no agreed dataset format; ask the FIP maintainers to decide one (JSON is agreed only for metadata)",
+ "isError": false,
+ "costUsd": 0.059372999999999995,
+ "seconds": 11.9,
+ "stderr": ""
+}

@@ -1,0 +1,196 @@
+[
+ {
+  "id": "fiesta-astro:repository",
+  "community": "fiesta-astro",
+  "topic": "repository",
+  "question": "F4-D",
+  "expected": [
+   "Zenodo"
+  ],
+  "variant": "plain",
+  "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). Where should I deposit my image datasets so that they are findable?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>"
+ },
+ {
+  "id": "fiesta-astro:format",
+  "community": "fiesta-astro",
+  "topic": "format",
+  "question": "I1-D",
+  "expected": [
+   "Flexible Image Transport System"
+  ],
+  "variant": "plain",
+  "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which file format should I use for my image datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>"
+ },
+ {
+  "id": "fiesta-astro:licence",
+  "community": "fiesta-astro",
+  "topic": "licence",
+  "question": "R1.1-D",
+  "expected": [
+   "CC BY 4.0"
+  ],
+  "variant": "plain",
+  "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which licence should I put on my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>"
+ },
+ {
+  "id": "fiesta-astro:identifier",
+  "community": "fiesta-astro",
+  "topic": "identifier",
+  "question": "F1-D",
+  "expected": [
+   "DOI"
+  ],
+  "variant": "plain",
+  "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). What kind of persistent identifier should my datasets have?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>"
+ },
+ {
+  "id": "fiesta-astro:vocabulary",
+  "community": "fiesta-astro",
+  "topic": "vocabulary",
+  "question": "I2-D",
+  "expected": [
+   "IVOA Vocabulary: Unified Astronomy Thesaurus"
+  ],
+  "variant": "plain",
+  "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which vocabulary should I use to annotate my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>"
+ },
+ {
+  "id": "fiesta-astro:provenance",
+  "community": "fiesta-astro",
+  "topic": "provenance",
+  "question": "R1.2-D",
+  "expected": [
+   "PROV-O"
+  ],
+  "variant": "plain",
+  "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). How should I describe the provenance of my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>"
+ },
+ {
+  "id": "fiesta-bio:repository",
+  "community": "fiesta-bio",
+  "topic": "repository",
+  "question": "F4-D",
+  "expected": [
+   "Image Data Resource"
+  ],
+  "variant": "plain",
+  "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). Where should I deposit my image datasets so that they are findable?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>"
+ },
+ {
+  "id": "fiesta-bio:format",
+  "community": "fiesta-bio",
+  "topic": "format",
+  "question": "I1-D",
+  "expected": "NOT_DECLARED",
+  "variant": "plain",
+  "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which file format should I use for my image datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>"
+ },
+ {
+  "id": "fiesta-bio:licence",
+  "community": "fiesta-bio",
+  "topic": "licence",
+  "question": "R1.1-D",
+  "expected": [
+   "CC0 1.0",
+   "CC BY 4.0"
+  ],
+  "variant": "plain",
+  "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which licence should I put on my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>"
+ },
+ {
+  "id": "fiesta-bio:identifier",
+  "community": "fiesta-bio",
+  "topic": "identifier",
+  "question": "F1-D",
+  "expected": [
+   "URI"
+  ],
+  "variant": "plain",
+  "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). What kind of persistent identifier should my datasets have?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>"
+ },
+ {
+  "id": "fiesta-bio:vocabulary",
+  "community": "fiesta-bio",
+  "topic": "vocabulary",
+  "question": "I2-D",
+  "expected": "NOT_DECLARED",
+  "variant": "plain",
+  "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which vocabulary should I use to annotate my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>"
+ },
+ {
+  "id": "fiesta-bio:provenance",
+  "community": "fiesta-bio",
+  "topic": "provenance",
+  "question": "R1.2-D",
+  "expected": "NOT_DECLARED",
+  "variant": "plain",
+  "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). How should I describe the provenance of my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>"
+ },
+ {
+  "id": "fiesta-eo:repository",
+  "community": "fiesta-eo",
+  "topic": "repository",
+  "question": "F4-D",
+  "expected": [
+   "NIRD-RDA",
+   "Zenodo"
+  ],
+  "variant": "plain",
+  "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Where should I deposit my image datasets so that they are findable?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>"
+ },
+ {
+  "id": "fiesta-eo:format",
+  "community": "fiesta-eo",
+  "topic": "format",
+  "question": "I1-D",
+  "expected": [
+   "NetCDF"
+  ],
+  "variant": "plain",
+  "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which file format should I use for my image datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>"
+ },
+ {
+  "id": "fiesta-eo:licence",
+  "community": "fiesta-eo",
+  "topic": "licence",
+  "question": "R1.1-D",
+  "expected": [
+   "CC BY 4.0"
+  ],
+  "variant": "plain",
+  "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which licence should I put on my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>"
+ },
+ {
+  "id": "fiesta-eo:identifier",
+  "community": "fiesta-eo",
+  "topic": "identifier",
+  "question": "F1-D",
+  "expected": [
+   "DOI"
+  ],
+  "variant": "plain",
+  "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). What kind of persistent identifier should my datasets have?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>"
+ },
+ {
+  "id": "fiesta-eo:vocabulary",
+  "community": "fiesta-eo",
+  "topic": "vocabulary",
+  "question": "I2-D",
+  "expected": [
+   "NetCDF CF-1.11"
+  ],
+  "variant": "plain",
+  "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which vocabulary should I use to annotate my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>"
+ },
+ {
+  "id": "fiesta-eo:provenance",
+  "community": "fiesta-eo",
+  "topic": "provenance",
+  "question": "R1.2-D",
+  "expected": [
+   "NetCDF CF-1.11"
+  ],
+  "variant": "plain",
+  "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). How should I describe the provenance of my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>"
+ }
+]

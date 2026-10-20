@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-astro:repository",
+ "community": "fiesta-astro",
+ "topic": "repository",
+ "question": "F4-D",
+ "expected": [
+  "Zenodo"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). Where should I deposit my image datasets so that they are findable?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I couldn't find a published FAIR Implementation Profile for FIESTA Astronomy, and this session has no file tools, so I couldn't check any local files. This advice is based on what I already know about these communities, not on a profile I looked up.\n\n- **Zenodo** is the best fit. It is the general-purpose repository that Galaxy and its imaging communities usually use, it integrates well with Galaxy, and it is indexed by search engines and other discovery services.\n  - It gives each dataset a DOI.\n  - It records rich DataCite metadata.\n  - You can create a community collection for FIESTA, which keeps all of the group's datasets findable in one place.\n- **Other options:**\n  - **BioImage Archive** or **IDR**, if the images are from life sciences.\n  - An astronomy archive such as **CDS/VizieR** or an **IVOA**-registered Virtual Observatory service, if the data are observational products that the astronomy community normally publishes there.\n- **For findability**, use FITS headers and IVOA-compatible metadata, add a clear licence (for example CC-BY), and link the DOI from your Galaxy workflows and histories.\n\nIf your community has its own FIP, use the repository it names, as that takes priority over this advice.\n\nRECOMMENDATION: Zenodo",
+ "isError": false,
+ "costUsd": 0.0363792,
+ "seconds": 10.8,
+ "stderr": ""
+}

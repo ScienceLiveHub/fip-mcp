@@ -1,0 +1,57 @@
+{
+ "id": "fiesta-eo:licence",
+ "community": "fiesta-eo",
+ "topic": "licence",
+ "question": "R1.1-D",
+ "expected": [
+  "CC BY 4.0"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which licence should I put on my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "B",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "Your community's FAIR Implementation Profile (FIESTA Earth Observation, Galaxy imaging) names **CC BY 4.0** as its licence for datasets (question R1.1-D). It uses the same licence for metadata records (R1.1-MD).\n\nCC BY 4.0 lets anyone share and adapt your data, as long as they give appropriate credit. No other licences are listed in the profile, current or planned.\n\nRECOMMENDATION: CC BY 4.0 (http://purl.org/np/RAQ__sGdY_Qc7l1O_zmn4nr-pMBOxKU04Ur9s998rS6Fc#CC-BY-4.0)",
+ "isError": false,
+ "costUsd": 0.055940000000000004,
+ "seconds": 15.8,
+ "stderr": ""
+}

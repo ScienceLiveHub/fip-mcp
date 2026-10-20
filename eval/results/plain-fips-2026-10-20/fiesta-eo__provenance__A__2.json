@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-eo:provenance",
+ "community": "fiesta-eo",
+ "topic": "provenance",
+ "question": "R1.2-D",
+ "expected": [
+  "NetCDF CF-1.11"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). How should I describe the provenance of my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "Since your data goes through Galaxy, the most practical approach is to use Galaxy's built-in provenance export.\n\n- **Export each workflow invocation as a Workflow Run RO-Crate.** Galaxy can do this natively. Use the Provenance Run Crate profile. It records which workflow and tool versions ran, the parameters, the input and output datasets, timestamps, and who ran it. It uses schema.org terms that map to W3C PROV-O, so it stays interoperable with other provenance standards.\n- **Add details specific to Earth Observation in the dataset metadata.** For example: the source mission or sensor and product ID (such as the Sentinel-2 L2A tile), the processing level, the area and time covered, and the original archive's DOI or URL. Link to these from the crate using `isBasedOn` or `wasDerivedFrom`.\n- **Use persistent identifiers.** Give workflows, datasets and people persistent IDs: WorkflowHub IDs for workflows, DOIs for datasets, and ORCID for people.\n- **Check your community's FAIR Implementation Profile (FIP).** It's the official list of standards your community has agreed to use. I couldn't look up the FIESTA / FAIR Image Data Workflows FIP from here. If it names a provenance standard for FAIR principle R1.2 (detailed provenance), use that one. It's most likely PROV-O or RO-Crate.\n\nRECOMMENDATION: Workflow Run RO-Crate (Provenance Run Crate profile)",
+ "isError": false,
+ "costUsd": 0.0430952,
+ "seconds": 13.0,
+ "stderr": ""
+}

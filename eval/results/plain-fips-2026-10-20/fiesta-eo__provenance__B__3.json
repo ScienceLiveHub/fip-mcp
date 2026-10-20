@@ -1,0 +1,57 @@
+{
+ "id": "fiesta-eo:provenance",
+ "community": "fiesta-eo",
+ "topic": "provenance",
+ "question": "R1.2-D",
+ "expected": [
+  "NetCDF CF-1.11"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). How should I describe the provenance of my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "B",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "I looked this up in the FIESTA Earth Observation FAIR Implementation Profile (FIP). It gives one answer for the provenance of your datasets, under question R1.2-D:\n\n- **NetCDF CF-1.11**: use the Climate and Forecast (CF) Metadata Convention v1.11. Record provenance in the CF global attributes, such as `history`, `source`, `institution`, `references` and `comment`. https://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html\n\nThe profile handles the provenance of your *metadata records* separately (question R1.2-MD). For that it chooses **RO-Crate** (https://w3id.org/ro/crate), which fits well with exporting Galaxy workflow runs. The profile lists no planned changes for either choice.\n\nRECOMMENDATION: NetCDF CF-1.11 (Climate and Forecast Metadata Conventions v1.11)",
+ "isError": false,
+ "costUsd": 0.0581492,
+ "seconds": 16.2,
+ "stderr": ""
+}

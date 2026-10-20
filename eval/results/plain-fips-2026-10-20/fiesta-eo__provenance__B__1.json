@@ -1,0 +1,57 @@
+{
+ "id": "fiesta-eo:provenance",
+ "community": "fiesta-eo",
+ "topic": "provenance",
+ "question": "R1.2-D",
+ "expected": [
+  "NetCDF CF-1.11"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). How should I describe the provenance of my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "B",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "Your community's FAIR Implementation Profile (FIESTA EO FIP, principle R1.2) covers provenance in two parts:\n\n- **Dataset provenance:** describe it with the **NetCDF CF-1.11** conventions (https://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html). In practice, fill in the global attributes in your NetCDF files: `history` for processing steps, plus `source`, `institution` and `references`.\n- **Metadata record provenance:** package and describe it with **RO-Crate** (https://w3id.org/ro/crate). This fits well with Galaxy, which can export workflow runs as RO-Crates.\n\nRECOMMENDATION: NetCDF CF-1.11 (CF Metadata Conventions v1.11)",
+ "isError": false,
+ "costUsd": 0.05686000000000001,
+ "seconds": 10.8,
+ "stderr": ""
+}

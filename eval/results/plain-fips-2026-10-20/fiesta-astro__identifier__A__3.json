@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-astro:identifier",
+ "community": "fiesta-astro",
+ "topic": "identifier",
+ "question": "F1-D",
+ "expected": [
+  "DOI"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). What kind of persistent identifier should my datasets have?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "For FAIR principle F1, your datasets should get a **globally unique, persistent, resolvable identifier**. In astronomy and Galaxy-based image workflows, that usually means a **DOI (Digital Object Identifier)**. DOIs are typically minted through DataCite, for example by depositing in Zenodo or your institution's DataCite-member repository.\n\nWhy a DOI fits:\n- It's the standard identifier for citable research data, and astronomy journals and data centres already recognise it.\n- Galaxy workflows and tools connect to Zenodo and DataCite, so the DOI can stay linked to your data and its provenance (for example, a workflow RO-Crate).\n- DataCite metadata is indexed and harvestable, which makes your data findable (F3/F4).\n\nI couldn't look up the community's published FAIR Implementation Profile from here. This is the usual choice for this kind of community, not one I confirmed in their profile, so check the FIP if you need an exact match.\n\nRECOMMENDATION: DataCite DOI",
+ "isError": false,
+ "costUsd": 0.0326112,
+ "seconds": 9.6,
+ "stderr": ""
+}

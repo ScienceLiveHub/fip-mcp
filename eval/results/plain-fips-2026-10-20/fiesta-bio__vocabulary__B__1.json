@@ -1,0 +1,55 @@
+{
+ "id": "fiesta-bio:vocabulary",
+ "community": "fiesta-bio",
+ "topic": "vocabulary",
+ "question": "I2-D",
+ "expected": "NOT_DECLARED",
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which vocabulary should I use to annotate my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "B",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "The FIESTA Bioimaging FAIR Implementation Profile hasn't chosen a vocabulary for annotating datasets themselves (question I2-D). There's no community-agreed answer there, so I won't put my own pick forward as theirs. It's worth raising this gap with the FIP maintainers.\n\nThe community has agreed on one vocabulary for metadata records (question I2-MD): the **NCBI Taxonomy** (https://www.ncbi.nlm.nih.gov/taxonomy), a curated database of organism names and classifications. If you need to describe organisms in your dataset annotations, using it keeps you consistent with what the community already uses for metadata.\n\nRECOMMENDATION: NCBI Taxonomy (https://www.ncbi.nlm.nih.gov/taxonomy)",
+ "isError": false,
+ "costUsd": 0.058686,
+ "seconds": 17.0,
+ "stderr": ""
+}

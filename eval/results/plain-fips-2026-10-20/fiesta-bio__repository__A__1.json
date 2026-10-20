@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-bio:repository",
+ "community": "fiesta-bio",
+ "topic": "repository",
+ "question": "F4-D",
+ "expected": [
+  "Image Data Resource"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). Where should I deposit my image datasets so that they are findable?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "Your community's FAIR Implementation Profile isn't available to me, and I have no file tools here to check for one. This answer is based on common practice in bioimaging, not on FIESTA's own declared choices.\n\n- **BioImage Archive** (EMBL-EBI) is the general public repository for biological images of any kind that support publications. Each dataset gets a persistent accession number (S-BIAD\u2026), and you describe it with the REMBI metadata guidelines. That makes your data findable and citable, and it is listed in FAIRsharing and re3data.\n- **Image Data Resource (IDR)** is a curated archive for high-value reference datasets that come with rich annotations. Only selected datasets are accepted, so it's best for flagship studies.\n- **EMPIAR** is for raw electron microscopy and cryo-EM data.\n- **OMERO** is useful for managing images and connecting them to Galaxy during your analysis. It isn't a long-term archive, so deposit the final data in BioImage Archive.\n\nFor the best findability, use open formats like OME-TIFF or OME-Zarr, add REMBI metadata, and cite the accession number in your papers and Galaxy workflows. If FIESTA has published a FIP, check that it names the same repository.\n\nRECOMMENDATION: BioImage Archive (EMBL-EBI)",
+ "isError": false,
+ "costUsd": 0.0364352,
+ "seconds": 9.5,
+ "stderr": ""
+}

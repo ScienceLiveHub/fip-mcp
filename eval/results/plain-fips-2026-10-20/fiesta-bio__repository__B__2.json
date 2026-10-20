@@ -1,0 +1,58 @@
+{
+ "id": "fiesta-bio:repository",
+ "community": "fiesta-bio",
+ "topic": "repository",
+ "question": "F4-D",
+ "expected": [
+  "Image Data Resource"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). Where should I deposit my image datasets so that they are findable?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "B",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend",
+  "mcp__fip__profile"
+ ],
+ "answer": "I checked the FIESTA Bioimaging community's FAIR Implementation Profile (FIESTA Bio FIP v1.0.0, the latest version). It names one place for findability: the **Image Data Resource (IDR)** (https://doi.org/10.25504/FAIRsharing.6wf1zw). Both your datasets and their metadata records should be indexed there.\n\nOther things the profile has agreed:\n- **Metadata:** written in JSON. Organisms are described with NCBI Taxonomy terms. Qualified references use CMPO, EFO, SNOMED CT and FBbi.\n- **Identifiers:** URIs, accessed over HTTP.\n- **Licence:** CC0 1.0 or CC BY 4.0.\n\nThe profile hasn't chosen a metadata schema for findability or a provenance schema yet, so check with the community before picking one yourself.\n\nRECOMMENDATION: Image Data Resource (IDR)",
+ "isError": false,
+ "costUsd": 0.082673,
+ "seconds": 20.1,
+ "stderr": ""
+}

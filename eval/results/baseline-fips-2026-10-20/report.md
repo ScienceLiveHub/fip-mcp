@@ -1,4 +1,4 @@
-# Assistant test — eval/results/baseline-fips-2026-10-20
+# Assistant test (choice) — eval/results/baseline-fips-2026-10-20
 
 108 runs; model(s): claude-opus-5-5
 

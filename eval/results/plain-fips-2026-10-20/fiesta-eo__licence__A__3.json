@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-eo:licence",
+ "community": "fiesta-eo",
+ "topic": "licence",
+ "question": "R1.1-D",
+ "expected": [
+  "CC BY 4.0"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which licence should I put on my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I couldn't check the FIESTA community's FAIR Implementation Profile (FIP) from here, because I have no file or web access in this session. So this is the general standard, not a confirmed community choice.\n\n- **Use Creative Commons Attribution 4.0 (CC BY 4.0).** It is the most widely used licence for open Earth Observation and research data. Copernicus/ESA and many Galaxy-hosted EO datasets use it or something compatible.\n- **Machine-readable licence.** In your dataset metadata, give the licence as its SPDX identifier, `CC-BY-4.0`, plus its URL (https://creativecommons.org/licenses/by/4.0/). This is what makes it work under FAIR principle R1.1 (\"released with a clear licence\").\n- **Inherited terms.** If your data is derived from Sentinel or Landsat inputs, check that their licences are compatible with yours. They usually are with CC BY 4.0.\n- **Check the FIP first.** If FIESTA's FIP names a different licence (for example CC0), use that one instead.\n\nRECOMMENDATION: Creative Commons Attribution 4.0 International (CC BY 4.0)",
+ "isError": false,
+ "costUsd": 0.0338872,
+ "seconds": 14.3,
+ "stderr": ""
+}

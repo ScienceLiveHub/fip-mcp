@@ -1,0 +1,57 @@
+{
+ "id": "fiesta-eo:identifier",
+ "community": "fiesta-eo",
+ "topic": "identifier",
+ "question": "F1-D",
+ "expected": [
+  "DOI"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). What kind of persistent identifier should my datasets have?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "B",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "Your datasets should get a **DOI (Digital Object Identifier)**. That's what the FIESTA Earth Observation FAIR Implementation Profile (latest version) lists as its current choice for dataset identifiers (FAIR principle F1, for data). The same profile also uses DOIs for metadata records. A DOI is globally unique, persistent and resolvable. It keeps pointing to your data even if the storage location changes.\n\nYou usually get a DOI from the repository where you deposit the dataset.\n\nRECOMMENDATION: DOI (Digital Object Identifier)",
+ "isError": false,
+ "costUsd": 0.054996,
+ "seconds": 10.0,
+ "stderr": ""
+}

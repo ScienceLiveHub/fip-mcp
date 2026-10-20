@@ -1,0 +1,56 @@
+{
+ "id": "fiesta-bio:provenance",
+ "community": "fiesta-bio",
+ "topic": "provenance",
+ "question": "R1.2-D",
+ "expected": "NOT_DECLARED",
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). How should I describe the provenance of my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "B",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend",
+  "mcp__fip__profile"
+ ],
+ "answer": "The FIESTA Bioimaging community hasn't chosen a provenance schema. Its FAIR Implementation Profile (FIESTA Bio FIP v1.0.0, the latest version) leaves both provenance questions open: one for datasets (R1.2-D) and one for metadata records (R1.2-MD). So there's no agreed community standard to follow yet.\n\nWhat I'd suggest:\n1. **Raise the gap with the FIP maintainers** so the community can make a shared choice. Right now 11 of the profile's 21 questions are answered, and provenance isn't one of them.\n2. **In the meantime, here is my own suggestion (not a community choice):** Galaxy can export a workflow invocation as a **Workflow Run RO-Crate**. This records which tools, versions, parameters, inputs and outputs produced each dataset, using concepts from W3C PROV. It also fits choices the community has already made: JSON metadata, URI identifiers, and CC0 1.0 or CC BY 4.0 licences.\n3. For the parts the community has agreed on, use them as listed: annotate with the agreed ontologies (CMPO, EFO, FBbi, SNOMED CT, NCBI Taxonomy) and index in the Image Data Resource (IDR).\n\nRECOMMENDATION: Workflow Run RO-Crate (my own interim suggestion; the FIESTA Bio FIP has no provenance choice yet, so raise it with the FIP maintainers)",
+ "isError": false,
+ "costUsd": 0.0887318,
+ "seconds": 22.0,
+ "stderr": ""
+}

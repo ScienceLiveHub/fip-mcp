@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-bio:identifier",
+ "community": "fiesta-bio",
+ "topic": "identifier",
+ "question": "F1-D",
+ "expected": [
+  "URI"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). What kind of persistent identifier should my datasets have?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "Use a **DOI (Digital Object Identifier)** for your datasets.\n\n- DOIs are globally unique, persistent and resolvable. They are the standard identifier for published datasets in the bioimaging and Galaxy communities.\n- You usually get one by depositing your data in a repository that mints DOIs. For images, that means the **BioImage Archive** or **Zenodo**, which issues DataCite DOIs and integrates with Galaxy. For image-specific identifiers you can also use EMPIAR or IDR accession numbers.\n- Put the DOI in your metadata (RO-Crate or Galaxy workflow outputs) and cite it in your papers.\n\nI couldn't look up the FIESTA community's FAIR Implementation Profile, so this is the general recommendation for the field. Check the profile on the FAIR Connect / FIP Wizard platform in case it names a specific PID service.\n\nRECOMMENDATION: DOI (Digital Object Identifier, e.g. DataCite DOIs via Zenodo or the BioImage Archive)",
+ "isError": false,
+ "costUsd": 0.0327552,
+ "seconds": 7.2,
+ "stderr": ""
+}

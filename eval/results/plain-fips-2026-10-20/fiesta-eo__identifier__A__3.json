@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-eo:identifier",
+ "community": "fiesta-eo",
+ "topic": "identifier",
+ "question": "F1-D",
+ "expected": [
+  "DOI"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). What kind of persistent identifier should my datasets have?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "For datasets, the usual choice in this community is a **DOI (Digital Object Identifier)**, registered through **DataCite**. You'd normally get one by depositing your data in a repository that mints DOIs automatically, such as Zenodo, which works well with Galaxy workflows.\n\nWhy a DOI fits:\n- It is globally unique and stays resolvable even if the data moves (FAIR principles F1 and A1).\n- DataCite metadata makes the dataset findable and citable (F2\u2013F4).\n- It is the PID most commonly declared for datasets in FAIR Implementation Profiles for Earth Observation and imaging communities.\n\nA few related points:\n- Your workflows can get their own DOIs too, for example through WorkflowHub.\n- Use ORCID iDs to identify the authors and ROR IDs for their institutions.\n- Use stable identifiers for individual files or granules inside the dataset if your data has them.\n\nI'm answering from general knowledge of these communities. I didn't look up the FIESTA community's actual FAIR Implementation Profile, so check it to confirm DOI is their declared choice.\n\nRECOMMENDATION: DataCite DOI",
+ "isError": false,
+ "costUsd": 0.0317912,
+ "seconds": 8.9,
+ "stderr": ""
+}

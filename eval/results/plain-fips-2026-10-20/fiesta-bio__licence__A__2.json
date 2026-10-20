@@ -1,0 +1,40 @@
+{
+ "id": "fiesta-bio:licence",
+ "community": "fiesta-bio",
+ "topic": "licence",
+ "question": "R1.1-D",
+ "expected": [
+  "CC0 1.0",
+  "CC BY 4.0"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which licence should I put on my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I couldn't check the FIESTA Bioimaging community's FAIR Implementation Profile, the document where a community records which licences it uses. This session has no tools to read files or the web, so this answer comes from general knowledge of bioimaging practice.\n\n- **Default choice: Creative Commons Attribution 4.0 (CC BY 4.0).** It's the most common open licence for research data in Galaxy and bioimaging work. Galaxy training material and many image datasets on Zenodo use it, and it requires people who reuse your data to credit you.\n- **If you deposit in the BioImage Archive or EMPIAR:** as far as I know, these archives expect CC0 (public domain dedication). Follow the repository's own rule there.\n- **Before you publish:** check whether the FIESTA / FAIR Image Data Workflows profile lists a licence. If it names one, use that so your data stays compatible with the rest of the community.\n\nRECOMMENDATION: Creative Commons Attribution 4.0 International (CC BY 4.0)",
+ "isError": false,
+ "costUsd": 0.036263199999999995,
+ "seconds": 9.4,
+ "stderr": ""
+}

@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-bio:identifier",
+ "community": "fiesta-bio",
+ "topic": "identifier",
+ "question": "F1-D",
+ "expected": [
+  "URI"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). What kind of persistent identifier should my datasets have?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "Your datasets should have a **globally unique, persistent, resolvable identifier**. In bioimaging and Galaxy-based FAIR workflows, that is usually a **DOI (Digital Object Identifier)**.\n\n- **How you get one:** depositing images in a repository usually gives you a DOI automatically. The BioImage Archive gives accessions like S-BIAD\u2026 plus DOIs for studies, and Zenodo is a common general-purpose option that is well integrated with Galaxy. Image Data Resource (IDR) accessions also work for reference datasets.\n- **Why a DOI:** it resolves through doi.org, it can be cited, it carries metadata through DataCite, and it is what FAIR principle F1 expects.\n- **Related identifiers:** use ORCID iDs for authors and ROR IDs for institutions. Link the dataset DOI to your Galaxy workflow's identifier (for example a WorkflowHub DOI) so data and processing can be traced together.\n\nI couldn't open the community's actual FAIR Implementation Profile (FIP) from here, so this is based on common practice. If the FIESTA FIP names a specific identifier service, check it and use that.\n\nRECOMMENDATION: DOI (Digital Object Identifier)",
+ "isError": false,
+ "costUsd": 0.0353552,
+ "seconds": 10.0,
+ "stderr": ""
+}

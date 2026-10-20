@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-eo:identifier",
+ "community": "fiesta-eo",
+ "topic": "identifier",
+ "question": "F1-D",
+ "expected": [
+  "DOI"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). What kind of persistent identifier should my datasets have?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "Use a **DOI (Digital Object Identifier)** for your datasets. DOIs are the standard dataset PID in Earth Observation and Galaxy-based FAIR image workflows, and they are what DataCite-backed repositories such as Zenodo issue. A DOI gives you:\n\n- **A link that stays stable** and resolves through doi.org.\n- **Rich metadata through DataCite**, including creators, licence, related identifiers and links to the Galaxy workflow that produced the data.\n- **Easy citation**, with good support from indexers and publishers.\n\nIn practice, deposit each dataset, or each meaningful version of it, in a repository that mints DOIs, such as Zenodo or PANGAEA for EO data. Then put the DOI in your Galaxy history or workflow metadata, for example in RO-Crate. For persistent identifiers for people, use ORCID iDs. For workflows, use WorkflowHub, which also issues DOIs.\n\nI couldn't open your community's FAIR Implementation Profile (FIP) from this session. Before you standardise on DOIs, check that the FIESTA/Galaxy FIP actually names them.\n\nRECOMMENDATION: DOI (Digital Object Identifier, minted via DataCite e.g. through Zenodo)",
+ "isError": false,
+ "costUsd": 0.0334712,
+ "seconds": 10.8,
+ "stderr": ""
+}

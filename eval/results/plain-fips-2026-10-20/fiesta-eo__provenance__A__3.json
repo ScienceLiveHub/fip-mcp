@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-eo:provenance",
+ "community": "fiesta-eo",
+ "topic": "provenance",
+ "question": "R1.2-D",
+ "expected": [
+  "NetCDF CF-1.11"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). How should I describe the provenance of my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "Provenance falls under FAIR principle **R1.2**: (meta)data should be linked to detailed provenance. Your data comes out of Galaxy workflows, so the most practical approach is to capture provenance automatically from the workflow runs rather than writing it by hand:\n\n- **Export Workflow Run RO-Crates from Galaxy.** Galaxy can export an invocation as an RO-Crate. That records the workflow (inputs, tools and versions, parameters, outputs), who ran it, when, and how each output was derived.\n- **Use the Provenance Run Crate profile** if you need step-level detail, such as each tool execution and its intermediate files. It is built on schema.org and maps to W3C PROV, so other systems can read it.\n- **Add Earth Observation context to the crate or your dataset metadata.** For source imagery, include the mission or sensor, product level, acquisition time, processing baseline, and identifiers or DOIs. STAC metadata is a good way to describe the EO assets themselves.\n- **Publish the crate with the data**, for example on Zenodo or WorkflowHub, and link it to the workflow's persistent identifier.\n\nI don't have your community's actual FAIR Implementation Profile (FIP) to check against. If it names a specific provenance resource, use that one. The RO-Crate approach fits Galaxy-based image workflows best.\n\nRECOMMENDATION: Workflow Run RO-Crate (Provenance Run Crate profile)",
+ "isError": false,
+ "costUsd": 0.0380592,
+ "seconds": 11.4,
+ "stderr": ""
+}

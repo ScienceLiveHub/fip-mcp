@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-astro:licence",
+ "community": "fiesta-astro",
+ "topic": "licence",
+ "question": "R1.1-D",
+ "expected": [
+  "CC BY 4.0"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which licence should I put on my datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "A",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't see your community's FAIR Implementation Profile (FIP) from here, so I can't tell you which licence the FIESTA/Galaxy community formally declared for R1.1 (the FAIR principle on data licences). Check the FIP first if you can. If it doesn't specify one, use **Creative Commons Attribution 4.0 (CC BY 4.0)**:\n\n- **It's the norm in astronomy.** ESO, ESA archives and most Zenodo-deposited astronomy datasets use it, and Galaxy training material is also CC BY.\n- **Machines can read it.** It has a standard SPDX identifier (`CC-BY-4.0`) and a resolvable URI, which is what R1.1 asks for.\n- **It allows reuse and requires credit.** That fits research data that goes into published workflows.\n\nUse CC0 instead if you want no attribution requirement at all, for example for metadata or catalogues meant to be merged into large aggregations. Avoid NC (non-commercial) and ND (no derivatives) variants, because they make reuse in workflows harder.\n\nRECOMMENDATION: Creative Commons Attribution 4.0 International (CC BY 4.0) \u2014 https://creativecommons.org/licenses/by/4.0/",
+ "isError": false,
+ "costUsd": 0.0351552,
+ "seconds": 8.7,
+ "stderr": ""
+}

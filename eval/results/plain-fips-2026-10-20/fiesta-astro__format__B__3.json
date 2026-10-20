@@ -1,0 +1,57 @@
+{
+ "id": "fiesta-astro:format",
+ "community": "fiesta-astro",
+ "topic": "format",
+ "question": "I1-D",
+ "expected": [
+  "Flexible Image Transport System"
+ ],
+ "variant": "plain",
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which file format should I use for my image datasets?\n\nAnswer briefly. On the last line write: RECOMMENDATION: <the one resource you recommend>",
+ "condition": "B",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "Use **FITS (Flexible Image Transport System)**. The FIESTA Astronomy FAIR Implementation Profile names it as the community's current format for datasets (question I1-D). FITS was built for scientific images in astronomy and has built-in ways to record photometric and spatial calibration alongside the image data.\n\nThe profile lists XML and RDF for metadata records, not for the image data itself.\n\nReference: https://w3id.org/np/RAtnRDavQjABwiKC6fVOj6JM2gVb8tucL1a0JMXDaFX6E#FITS\n\nRECOMMENDATION: Flexible Image Transport System (FITS)",
+ "isError": false,
+ "costUsd": 0.0578872,
+ "seconds": 18.0,
+ "stderr": ""
+}
