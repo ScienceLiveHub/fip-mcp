@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-astro:licence",
+ "community": "fiesta-astro",
+ "topic": "licence",
+ "question": "R1.1-D",
+ "expected": [
+  "CC BY 4.0"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which licence should I put on my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't find a record of a licence that the FIESTA Astronomy community (within \"FAIR Image Data Workflows in Galaxy\") has agreed on. I don't know their FAIR Implementation Profile (the record of the community's agreed FAIR choices), and I have no file-reading or web tools in this session to look it up. So I can't tell you what your community agreed.\n\nGeneral advice for now:\n- **CC BY 4.0** is the most common choice for open research data, including astronomy and image data. People can reuse your data as long as they credit you.\n- **CC0** is an option if you want as few barriers to reuse as possible.\n- Before you choose, ask your community's coordinators or check their FAIR Implementation Profile (for example on the FIP Wizard or FAIR Connect). Also check whether any instrument, observatory or archive whose data you used sets its own licence terms.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0314472,
+ "seconds": 6.4,
+ "stderr": ""
+}

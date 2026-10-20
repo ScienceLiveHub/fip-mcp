@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-astro:format",
+ "community": "fiesta-astro",
+ "topic": "format",
+ "question": "I1-D",
+ "expected": [
+  "Flexible Image Transport System"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which file format should I use for my image datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "For astronomy image data, **FITS** (Flexible Image Transport System) is the usual choice. It's the IAU-endorsed standard, it stores metadata in its headers (including WCS coordinates), and Galaxy's astronomy tools support it. If your Galaxy imaging workflows also reach into bioimaging-style tools, OME-TIFF or OME-Zarr are the common open formats there.\n\nHowever, I can't see the FAIR Implementation Profile (FIP) for FIESTA Astronomy or for the \"FAIR Image Data Workflows in Galaxy\" community, so I can't confirm which format your community formally declared. Check your community's published FIP, for example on the FIP Wizard or as FAIR Enabling Resource nanopublications.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0324712,
+ "seconds": 8.2,
+ "stderr": ""
+}

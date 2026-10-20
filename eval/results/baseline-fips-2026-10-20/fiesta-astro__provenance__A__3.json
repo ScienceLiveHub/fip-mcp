@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-astro:provenance",
+ "community": "fiesta-astro",
+ "topic": "provenance",
+ "question": "R1.2-D",
+ "expected": [
+  "PROV-O"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). How should I describe the provenance of my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I don't have a record of what the FIESTA Astronomy community has agreed on for provenance. I also have no tools here to look up its FAIR Implementation Profile (FIP), so I can't say whether a choice was declared.\n\nWhat's common in this area:\n- **W3C PROV / PROV-O** is the general standard for describing provenance.\n- **Workflow Run RO-Crate**, which builds on PROV, is what Galaxy can export to package a workflow's inputs, outputs, parameters and tool versions together.\n- **IVOA ProvenanceDM** is the provenance model for astronomy and Virtual Observatory data.\n\nTo find the actual choice, look at the provenance question (FAIR principle R1.2) in FIESTA's FIP, or in the parent \"FAIR Image Data Workflows in Galaxy\" FIP, on the FIP Wizard / FAIR Connect. If it lists a resource, use that one.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.032567200000000004,
+ "seconds": 7.5,
+ "stderr": ""
+}

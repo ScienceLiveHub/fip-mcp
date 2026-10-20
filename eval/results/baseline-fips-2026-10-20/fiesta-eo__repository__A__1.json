@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-eo:repository",
+ "community": "fiesta-eo",
+ "topic": "repository",
+ "question": "F4-D",
+ "expected": [
+  "NIRD-RDA",
+  "Zenodo"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Where should I deposit my image datasets so that they are findable?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't confirm which repository your community has formally agreed on. I don't have a record of the FIESTA Earth Observation / \"FAIR Image Data Workflows in Galaxy\" FAIR Implementation Profile (FIP), and there are no files in this workspace I could check for it.\n\nCommon choices in this field:\n- **Zenodo**: general-purpose, gives each dataset a DOI, and is often used in Galaxy-related communities.\n- **Image Data Resource (IDR)** or **BioImage Archive**: used for bioimaging data, which is less relevant to Earth Observation.\n- **Copernicus / ESA / EUMETSAT archives** or **PANGAEA**: often used for Earth Observation data.\n\nTo find the agreed choice, look at your community's published FIP (for example on the FIP Wizard or GO FAIR site), or ask the community coordinators. If you share the FIP document with me, I can tell you exactly what it says.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0322872,
+ "seconds": 7.3,
+ "stderr": ""
+}

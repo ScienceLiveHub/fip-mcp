@@ -1,0 +1,57 @@
+{
+ "id": "fiesta-eo:repository",
+ "community": "fiesta-eo",
+ "topic": "repository",
+ "question": "F4-D",
+ "expected": [
+  "NIRD-RDA",
+  "Zenodo"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Where should I deposit my image datasets so that they are findable?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "B",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "The FIESTA Earth Observation community's published FAIR Implementation Profile (FIP) names two places where its datasets are indexed (question F4\u2011D: which search engines or registries index your datasets):\n\n- **NIRD Research Data Archive (NIRD RDA)**: Sigma2's archive for Norwegian research data. It aims to keep data discoverable and reusable for at least 10 years after deposit.\n- **Zenodo**: the general-purpose repository run by CERN and OpenAIRE. The community also names it as the place where metadata records are indexed (question F4\u2011MD), so your metadata will be findable there too.\n\nUse NIRD RDA if your work is Norwegian or Sigma2-funded. Otherwise, or in addition, use Zenodo.\n\nCOMMUNITY_CHOICE: NIRD-RDA, Zenodo",
+ "isError": false,
+ "costUsd": 0.061387,
+ "seconds": 10.5,
+ "stderr": ""
+}

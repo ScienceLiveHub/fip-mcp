@@ -1,0 +1,54 @@
+{
+ "id": "fiesta-bio:format",
+ "community": "fiesta-bio",
+ "topic": "format",
+ "question": "I1-D",
+ "expected": "NOT_DECLARED",
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which file format should I use for my image datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "B",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "Your community, FIESTA Bioimaging, hasn't agreed on a file format for image datasets. In its FAIR Implementation Profile, question I1-D (\"Which formats do you use for datasets?\") is explicitly left open, so I can't point you to a community choice.\n\nThe community has only agreed on a format for metadata records, and that format is JSON.\n\nFor the image data itself, ask the FIP maintainers to settle question I1-D. Until they do, any format you pick is your own choice and not the community's agreed standard.\n\nCOMMUNITY_CHOICE: NOT_DECLARED",
+ "isError": false,
+ "costUsd": 0.05521000000000001,
+ "seconds": 15.0,
+ "stderr": "Warning: no stdin data received in 3s, proceeding without it. If piping from a slow command, redirect stdin explicitly: < /dev/null to skip, or wait longer.\n"
+}

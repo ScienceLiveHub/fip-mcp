@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-astro:repository",
+ "community": "fiesta-astro",
+ "topic": "repository",
+ "question": "F4-D",
+ "expected": [
+  "Zenodo"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). Where should I deposit my image datasets so that they are findable?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't find any record of what the FIESTA Astronomy / \"FAIR Image Data Workflows in Galaxy\" community agreed on for depositing image data. I don't have its FAIR Implementation Profile, and this session has no file-reading tools, so I couldn't check your working directory for one either.\n\nSome general options:\n- **Zenodo**: a general-purpose repository that gives each dataset a DOI. It is widely used in the Galaxy community.\n- **BioImage Archive / IDR**: suited to image data in the life sciences.\n- **Astronomy archives**: for example, CDS/VizieR or a mission- or observatory-specific archive, where these exist for your data.\n\nTo find out what your community actually agreed, look up its FIP on the FIP Wizard or in the community's documentation. You could also ask the community's FAIR or data steward.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0312312,
+ "seconds": 7.5,
+ "stderr": ""
+}

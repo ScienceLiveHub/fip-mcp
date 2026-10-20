@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-bio:licence",
+ "community": "fiesta-bio",
+ "topic": "licence",
+ "question": "R1.1-D",
+ "expected": [
+  "CC0 1.0",
+  "CC BY 4.0"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which licence should I put on my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't find a record of what licence the FIESTA Bioimaging / \"FAIR Image Data Workflows in Galaxy\" community has agreed on. I have no tools here to read its FAIR Implementation Profile (FIP) or other documents, so I can't check.\n\nGeneral advice:\n- **CC BY 4.0** is the usual choice for bioimaging datasets. It's used by repositories such as BioImage Archive, IDR and Zenodo, and it requires that you be credited.\n- **CC0** is common for metadata, or when you want no reuse restrictions at all.\n- Check the community's published FIP on the FIP Wizard / FAIR Connect, or ask the community leads. They can confirm the licence they agreed on for the \"data usage license\" FAIR principle (R1.1).\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.031831200000000004,
+ "seconds": 8.2,
+ "stderr": ""
+}

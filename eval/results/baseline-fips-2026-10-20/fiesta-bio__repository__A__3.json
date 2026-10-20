@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-bio:repository",
+ "community": "fiesta-bio",
+ "topic": "repository",
+ "question": "F4-D",
+ "expected": [
+  "Image Data Resource"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). Where should I deposit my image datasets so that they are findable?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't find a record of what the FIESTA Bioimaging / \"FAIR Image Data Workflows in Galaxy\" community has formally agreed on for depositing image data. I don't have its FAIR Implementation Profile (FIP) or community declarations, and I have no tools here to read files or look them up. So I can't tell you what your community chose.\n\nGeneral advice for bioimaging data:\n- **BioImage Archive (EMBL-EBI)** is the main general-purpose archive for biological images. It supports REMBI metadata and OME-Zarr/OME-TIFF.\n- **IDR (Image Data Resource)** is for curated, reference-quality datasets linked to publications.\n- **EMPIAR** is for electron microscopy data. **Zenodo** is a general fallback that gives you a DOI.\n- To make your data findable, use open formats (OME-TIFF or OME-Zarr), rich metadata (REMBI) and persistent identifiers (DOIs).\n\nTo find your community's actual choice, check its FIP, for example on the FIP Wizard or as nanopublications. You could also ask the community coordinators.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0329232,
+ "seconds": 9.6,
+ "stderr": ""
+}

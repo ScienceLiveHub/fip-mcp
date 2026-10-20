@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-bio:identifier",
+ "community": "fiesta-bio",
+ "topic": "identifier",
+ "question": "F1-D",
+ "expected": [
+  "URI"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). What kind of persistent identifier should my datasets have?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't find any record of which persistent identifier (PID) the FIESTA Bioimaging / \"FAIR Image Data Workflows in Galaxy\" community has formally chosen. I couldn't look up their FAIR Implementation Profile (FIP) from here, and I won't guess what it says.\n\n**General advice:** bioimaging datasets usually get **DOIs** (through DataCite, for example via Zenodo or the BioImage Archive). Datasets in the BioImage Archive or the Image Data Resource also get accession numbers (S-BIAD\u2026, idr\u2026), which can be resolved through **identifiers.org**. Galaxy workflows are often given PIDs through WorkflowHub, which issues DOIs.\n\nTo confirm your community's choice, check its FIP on the FIP Wizard or in the FAIR Connect / ENVRI-FAIR nanopublications, or ask the community coordinators.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0322472,
+ "seconds": 6.9,
+ "stderr": ""
+}

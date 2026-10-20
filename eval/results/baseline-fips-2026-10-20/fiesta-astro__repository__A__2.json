@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-astro:repository",
+ "community": "fiesta-astro",
+ "topic": "repository",
+ "question": "F4-D",
+ "expected": [
+  "Zenodo"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). Where should I deposit my image datasets so that they are findable?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I couldn't find any record of what the FIESTA Astronomy community (part of \"FAIR Image Data Workflows in Galaxy\") has agreed on for depositing image data. I don't know of a published FAIR Implementation Profile or data policy from them, and I have no file or web tools here to check one. So I can't say what your community chose, or whether it chose anything.\n\nSome commonly used options, which are not your community's declared choice:\n- **Zenodo**, a general-purpose repository that gives you DOIs and works with Galaxy.\n- **Astronomy-specific archives**, such as the IVOA-compliant services or the data centre for your observatory or mission (for example, the ESO Science Archive or MAST), which are registered in the Virtual Observatory so others can find your data.\n- **Image-focused repositories** like BioImage Archive or IDR, though these are for life-science images rather than astronomy.\n\nTo find out what was actually agreed, ask your community coordinators or look for their FAIR Implementation Profile on the FIP Wizard or FAIR Connect.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0323032,
+ "seconds": 7.6,
+ "stderr": ""
+}

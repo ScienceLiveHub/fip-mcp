@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-bio:licence",
+ "community": "fiesta-bio",
+ "topic": "licence",
+ "question": "R1.1-D",
+ "expected": [
+  "CC0 1.0",
+  "CC BY 4.0"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which licence should I put on my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I couldn't find a record of which licence your community chose, so I can't say what FIESTA Bioimaging / \"FAIR Image Data Workflows in Galaxy\" agreed on. I have no file or search tools in this session that would let me read your community's FAIR Implementation Profile (FIP), and I don't know its licence declaration from memory.\n\n**What's typical elsewhere:** Bioimaging repositories like BioImage Archive, IDR and Zenodo mostly use **CC BY 4.0** for image data and **CC0** for metadata. Either is a safe default if your community hasn't chosen.\n\n**What to check:** Look at your community's FIP on the FIP Wizard (fip-wizard. readthedocs.io / fipwizard.org), under the question on licence (R1.1), or ask your community coordinators.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0308712,
+ "seconds": 6.6,
+ "stderr": ""
+}

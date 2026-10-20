@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-eo:format",
+ "community": "fiesta-eo",
+ "topic": "format",
+ "question": "I1-D",
+ "expected": [
+  "NetCDF"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which file format should I use for my image datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I don't know which image file format the FIESTA Earth Observation community agreed on. I couldn't find a FAIR Implementation Profile (FIP) or declaration for FIESTA, or for the wider \"FAIR Image Data Workflows in Galaxy\" community. I also have no tools in this session to look it up.\n\nCommon choices in Earth Observation and Galaxy imaging are:\n- **Cloud-Optimized GeoTIFF (COG) or GeoTIFF** for raster EO imagery\n- **NetCDF or Zarr** for multidimensional data cubes\n- **OME-TIFF or OME-Zarr**, which the Galaxy imaging community uses for bioimaging\n\nTo find your community's actual choice, check its FIP. It is usually published on the FIP Wizard or as nanopublications. You can also ask the community coordinators.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.031615199999999996,
+ "seconds": 6.3,
+ "stderr": ""
+}

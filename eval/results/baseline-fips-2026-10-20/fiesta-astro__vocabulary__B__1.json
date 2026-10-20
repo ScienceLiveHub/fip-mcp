@@ -1,0 +1,56 @@
+{
+ "id": "fiesta-astro:vocabulary",
+ "community": "fiesta-astro",
+ "topic": "vocabulary",
+ "question": "I2-D",
+ "expected": [
+  "IVOA Vocabulary: Unified Astronomy Thesaurus"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which vocabulary should I use to annotate my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "B",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "Use the **Unified Astronomy Thesaurus (UAT)**, in the IVOA re-publication: https://w3id.org/np/RAo2oTUaKUJthBJuTtbFTup8YCqRtQst2jZXaoC_WJyD0/IVOA-UAT. That version gives you human-readable URIs. I got this from the latest FIESTA Astronomy FAIR Implementation Profile (FIP). It's the agreed vocabulary both for annotating your datasets (question I2-D) and for encoding your metadata records (I2-MD). The profile lists nothing as planned.\n\nCOMMUNITY_CHOICE: IVOA Vocabulary: Unified Astronomy Thesaurus",
+ "isError": false,
+ "costUsd": 0.0574008,
+ "seconds": 13.9,
+ "stderr": ""
+}

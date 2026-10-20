@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-bio:repository",
+ "community": "fiesta-bio",
+ "topic": "repository",
+ "question": "F4-D",
+ "expected": [
+  "Image Data Resource"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). Where should I deposit my image datasets so that they are findable?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't confirm which repository your community has formally agreed on. I don't have the FIESTA Bioimaging FAIR Implementation Profile available here, and I can't look it up in this session.\n\nGeneral advice for making bioimaging data findable:\n- **BioImage Archive (EMBL-EBI):** the main general-purpose repository for biological images. It gives each dataset a persistent accession number and rich metadata, and supports REMBI.\n- **Image Data Resource (IDR):** a curated repository for reference image datasets that come with publications. It uses OME-NGFF/OME-Zarr and integrates well with Galaxy.\n- **Zenodo:** a general-purpose repository that issues DOIs. It works as a fallback, but searching by domain-specific metadata is weaker there.\n\nWhichever you choose, use open formats like OME-TIFF or OME-Zarr, add REMBI-style metadata, and cite the dataset's persistent identifier. To find your community's official choice, check the FIESTA FAIR Implementation Profile in the FIP Wizard or on the FAIR Connect / GO FAIR FIP pages, under the \"FAIR-enabling resources\" for findability and data repository.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0354192,
+ "seconds": 8.2,
+ "stderr": ""
+}

@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-bio:identifier",
+ "community": "fiesta-bio",
+ "topic": "identifier",
+ "question": "F1-D",
+ "expected": [
+  "URI"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). What kind of persistent identifier should my datasets have?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I couldn't find a record of which persistent identifier the FIESTA Bioimaging community chose. I don't have reliable knowledge of their FAIR Implementation Profile (FIP), the document where a community records its agreed FAIR choices. I also have no tool here to look it up.\n\nTo find the agreed answer, look at your community's FIP on the FIP Wizard (fip-wizard.ds-wizard.org) or in the FAIR Connect / FIP nanopublications. Find the answer to question F1 on persistent identifiers for data.\n\nWithout that, these are the usual choices for bioimaging data:\n- **DOIs**, minted through Zenodo or DataCite when you deposit the data. These fit well with Galaxy workflows.\n- **Accession numbers** from a specialist bioimaging repository, such as the BioImage Archive (S-BIAD\u2026) or the Image Data Resource (IDR), for reference image data.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0325832,
+ "seconds": 8.7,
+ "stderr": ""
+}

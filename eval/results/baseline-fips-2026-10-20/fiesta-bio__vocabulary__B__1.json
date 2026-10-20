@@ -1,0 +1,54 @@
+{
+ "id": "fiesta-bio:vocabulary",
+ "community": "fiesta-bio",
+ "topic": "vocabulary",
+ "question": "I2-D",
+ "expected": "NOT_DECLARED",
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which vocabulary should I use to annotate my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "B",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "The FIESTA Bioimaging FIP hasn't chosen a vocabulary for annotating datasets (question I2-D is left open). I can't name a community standard for that, and you could ask the FIP maintainers to add one.\n\nA related point: for vocabularies used inside **metadata records** (I2-MD), the community has agreed on the **NCBI Taxonomy** (https://www.ncbi.nlm.nih.gov/taxonomy) for organism names. That covers how you describe your data in metadata, not how you annotate the datasets themselves.\n\nCOMMUNITY_CHOICE: NOT_DECLARED",
+ "isError": false,
+ "costUsd": 0.0563838,
+ "seconds": 12.1,
+ "stderr": ""
+}

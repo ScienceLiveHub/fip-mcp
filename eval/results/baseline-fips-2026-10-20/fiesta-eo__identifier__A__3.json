@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-eo:identifier",
+ "community": "fiesta-eo",
+ "topic": "identifier",
+ "question": "F1-D",
+ "expected": [
+  "DOI"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). What kind of persistent identifier should my datasets have?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "For your datasets, a **DOI** (for example from Zenodo or DataCite) is the usual choice in Earth Observation and in Galaxy-based image workflows. It is globally unique, it resolves, and it can be cited. Other common options are **Handle** or **ARK** identifiers. Whatever you choose should resolve to a landing page that carries metadata.\n\nI don't have a reliable record of which identifier your community formally declared, for example in a FAIR Implementation Profile for FIESTA / \"FAIR Image Data Workflows in Galaxy\". I also couldn't look up any files or registries here. To confirm, check your community's FIP on the FIP Wizard / FAIR Connect.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0307152,
+ "seconds": 6.2,
+ "stderr": ""
+}

@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-bio:licence",
+ "community": "fiesta-bio",
+ "topic": "licence",
+ "question": "R1.1-D",
+ "expected": [
+  "CC0 1.0",
+  "CC BY 4.0"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which licence should I put on my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't find a record of what licence the FIESTA Bioimaging community, or the wider \"FAIR Image Data Workflows in Galaxy\" community, has agreed on. I don't have its FAIR Implementation Profile (FIP), and I have no tools here to look it up or read local files. So I can't confirm a community decision.\n\nAs general guidance, bioimaging data repositories such as BioImage Archive, IDR and Zenodo usually use one of two licences:\n- **CC0 1.0**: the most reusable, with no conditions.\n- **CC BY 4.0**: reuse is allowed as long as people credit you.\n\nBefore you choose, check your community's FIP on the FIP Wizard or with your community's data steward. Also check what your funder or the repository you're using requires.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.031735200000000005,
+ "seconds": 6.5,
+ "stderr": ""
+}

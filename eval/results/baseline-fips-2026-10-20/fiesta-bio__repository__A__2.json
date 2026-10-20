@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-bio:repository",
+ "community": "fiesta-bio",
+ "topic": "repository",
+ "question": "F4-D",
+ "expected": [
+  "Image Data Resource"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). Where should I deposit my image datasets so that they are findable?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't find a record of which repository your community has formally agreed on. I have no access to its FAIR Implementation Profile or any similar declaration, so I can't confirm its choice.\n\nFor bioimaging data in general, these are the usual options:\n- **BioImage Archive (EMBL-EBI):** the general repository for biological images that go with publications.\n- **Image Data Resource (IDR):** curated, reference-quality image datasets with rich metadata.\n- **EMPIAR:** for electron microscopy data.\n- **Zenodo:** a general-purpose repository that gives each dataset a DOI. Galaxy can connect to it easily, so it's handy for workflow outputs.\n\nTo make your data findable wherever you put it, use a repository that issues persistent identifiers (DOIs or accessions), store images in open formats like OME-TIFF or OME-Zarr, and describe them with a community metadata standard such as REMBI. Your community's coordinators or its published FIP should say which repository it expects.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0332312,
+ "seconds": 7.9,
+ "stderr": ""
+}

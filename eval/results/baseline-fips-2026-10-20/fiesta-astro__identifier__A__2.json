@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-astro:identifier",
+ "community": "fiesta-astro",
+ "topic": "identifier",
+ "question": "F1-D",
+ "expected": [
+  "DOI"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). What kind of persistent identifier should my datasets have?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "For astronomy datasets, the usual choice is a **DOI**, typically minted through DataCite by a repository such as Zenodo. In Galaxy workflows, DOIs are often used together with **ORCID** for researchers and **RRIDs or bio.tools IDs** for software and tools. A Handle-based PID or an ark is also acceptable in principle, but DOIs are the most widely recognised in astronomy publishing.\n\nI can't confirm which PID type the FIESTA Astronomy community actually agreed on. That decision would be recorded in its FAIR Implementation Profile (FIP), and I couldn't open that profile here. To check, look at the community's FIP on the FIP Wizard or in the FAIR Connect nanopublications, under the question about persistent identifiers for datasets.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.030879200000000002,
+ "seconds": 7.5,
+ "stderr": ""
+}

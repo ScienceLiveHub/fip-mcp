@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-astro:provenance",
+ "community": "fiesta-astro",
+ "topic": "provenance",
+ "question": "R1.2-D",
+ "expected": [
+  "PROV-O"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). How should I describe the provenance of my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "For provenance (FAIR principle R1.2), a Galaxy-based image workflow community would typically use one of these:\n\n- **Workflow Run RO-Crate.** Galaxy can export a workflow invocation as an RO-Crate. That package records the inputs, outputs, tool versions, parameters and who ran it.\n- **W3C PROV (PROV-O)**, which RO-Crate provenance profiles are built on.\n- **Domain metadata in the files themselves**, such as FITS header keywords for astronomy images or OME metadata for microscopy, linked back to the Galaxy history or workflow.\n\nI couldn't find your community's FAIR Implementation Profile (FIP), and I have no record of which provenance resource FIESTA Astronomy or \"FAIR Image Data Workflows in Galaxy\" formally agreed on. Check your community's published FIP (for example on the FIP Wizard or FAIR Connect) under the R1.2 question, or ask your community coordinators.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.033343199999999996,
+ "seconds": 8.0,
+ "stderr": ""
+}

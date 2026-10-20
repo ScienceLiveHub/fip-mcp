@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-eo:provenance",
+ "community": "fiesta-eo",
+ "topic": "provenance",
+ "question": "R1.2-D",
+ "expected": [
+  "NetCDF CF-1.11"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). How should I describe the provenance of my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I couldn't find out what your community agreed on. I don't have a reliable record of which provenance resource the FIESTA Earth Observation / \"FAIR Image Data Workflows in Galaxy\" community declared in its FAIR Implementation Profile (FIP), and I have no tools here to look it up.\n\n**Options that are widely used, and fit Galaxy-based EO work:**\n- **W3C PROV (PROV-O)**: the general standard for describing provenance (who did what, to which data, and when).\n- **Workflow Run RO-Crate**: Galaxy can export workflow invocations in this format. It captures the inputs, tools, parameters and outputs as linked provenance. This is often the most practical choice in Galaxy.\n- **ISO 19115-2 / 19115-1 lineage elements**: the metadata standard used in Earth Observation for processing history (source data, processing steps).\n\n**To confirm what your community chose:**\n- Look up the community's FIP on the FIP Wizard or as a FIP nanopublication. Check its answer to the provenance question (FAIR principle R1.2).\n- Or ask the community's FIP authors or data stewards.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0339512,
+ "seconds": 8.6,
+ "stderr": ""
+}

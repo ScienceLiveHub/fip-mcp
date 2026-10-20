@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-astro:provenance",
+ "community": "fiesta-astro",
+ "topic": "provenance",
+ "question": "R1.2-D",
+ "expected": [
+  "PROV-O"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). How should I describe the provenance of my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I don't have a record of a provenance standard that FIESTA Astronomy, or the wider \"FAIR Image Data Workflows in Galaxy\" community, has formally agreed on, for example in its FAIR Implementation Profile. I also have no tools in this session to look up their declarations. Please check your community's FIP, or ask its coordinators, to see whether a provenance resource is listed.\n\nUntil then, these are common choices that fit Galaxy-based image workflows:\n\n- **W3C PROV (PROV-O / PROV-DM):** the general standard for describing which entities, activities and agents produced a dataset.\n- **Workflow Run RO-Crate:** Galaxy can export workflow invocations in this format. It packages the inputs, outputs, tool versions and parameters, and builds on PROV concepts.\n- **Astronomy-specific:** the IVOA Provenance Data Model, along with the FITS header history and keywords you already have.\n\nA practical approach is to export your Galaxy invocations as Workflow Run RO-Crates and add IVOA or FITS provenance metadata where it applies.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0334312,
+ "seconds": 7.4,
+ "stderr": ""
+}

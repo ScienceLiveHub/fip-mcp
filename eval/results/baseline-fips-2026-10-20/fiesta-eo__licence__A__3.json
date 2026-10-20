@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-eo:licence",
+ "community": "fiesta-eo",
+ "topic": "licence",
+ "question": "R1.1-D",
+ "expected": [
+  "CC BY 4.0"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which licence should I put on my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't find any record of which licence the FIESTA Earth Observation community (within \"FAIR Image Data Workflows in Galaxy\") has agreed on. I have no FAIR Implementation Profile or other community declaration for it, and I have no file-reading tools here to check your working directory for one.\n\n**General advice:**\n- **CC BY 4.0** is the most common choice for open research data, including Earth Observation data. It's also the licence used by Copernicus/ESA-style open data policies and is widely accepted by repositories like Zenodo.\n- **CC0** is an option if you want as few barriers to reuse as possible.\n- Whichever you pick, give it as a machine-readable licence URI or SPDX identifier (e.g. `CC-BY-4.0`) in your metadata.\n- If you build on third-party EO products (e.g. Sentinel or Landsat), check that your licence is compatible with theirs.\n\nTo find what your community actually agreed, check its FAIR Implementation Profile (on the FIP Wizard or in the FAIR Connect registry) or ask its coordinators.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0321592,
+ "seconds": 8.4,
+ "stderr": ""
+}

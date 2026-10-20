@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-astro:identifier",
+ "community": "fiesta-astro",
+ "topic": "identifier",
+ "question": "F1-D",
+ "expected": [
+  "DOI"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). What kind of persistent identifier should my datasets have?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't confirm what the FIESTA Astronomy / \"FAIR Image Data Workflows in Galaxy\" community actually agreed on. I don't have access to its FAIR Implementation Profile (FIP), and I couldn't search for it from here: no file or web tools were available, and the working directory is not a repository I could inspect.\n\n**General advice:** In astronomy and Galaxy-based image workflows, **DOIs** are the usual choice for datasets. You typically get one by depositing data in a repository like Zenodo, which Galaxy can export to directly. Astronomy archives also use IVOA identifiers (`ivo://`) to identify data and services in the Virtual Observatory. To find your community's binding choice, look up its FIP on the FIP Wizard (fip-wizard.ds-wizard.org) or ask the community's data steward. Check the answer to the FIP question on persistent identifiers for metadata and data.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0325072,
+ "seconds": 8.3,
+ "stderr": ""
+}

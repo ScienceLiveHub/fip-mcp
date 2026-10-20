@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-eo:vocabulary",
+ "community": "fiesta-eo",
+ "topic": "vocabulary",
+ "question": "I2-D",
+ "expected": [
+  "NetCDF CF-1.11"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which vocabulary should I use to annotate my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't tell which vocabulary the FIESTA Earth Observation community has agreed on. I couldn't find any community declaration, such as a FAIR Implementation Profile, and I have no tools here to look one up. I'd rather not guess.\n\nTo find out, check whether your community has published a FAIR Implementation Profile (for example on the FIP Wizard or GO FAIR), or ask your community or data steward. In the meantime, options often used for Earth Observation image data include:\n- **CF Standard Names** for geophysical variables\n- **GCMD Science Keywords** (NASA)\n- **EDAM-Bioimaging / EDAM** for Galaxy tools and workflows\n\nNone of these is confirmed as your community's choice.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0299392,
+ "seconds": 6.1,
+ "stderr": ""
+}

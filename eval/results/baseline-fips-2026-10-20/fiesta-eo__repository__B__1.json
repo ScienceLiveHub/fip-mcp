@@ -1,0 +1,57 @@
+{
+ "id": "fiesta-eo:repository",
+ "community": "fiesta-eo",
+ "topic": "repository",
+ "question": "F4-D",
+ "expected": [
+  "NIRD-RDA",
+  "Zenodo"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Where should I deposit my image datasets so that they are findable?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "B",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "The FIESTA Earth Observation FAIR Implementation Profile (FIP) lists two places where your community's datasets are indexed (question F4\u2011D):\n\n- **NIRD Research Data Archive (NIRD RDA)**: Norway's national archive. It keeps research data findable and reusable for at least 10 years. It's the natural choice if you're working in a Norwegian context.\n- **Zenodo**: the general-purpose repository run by CERN and OpenAIRE. Your community also uses Zenodo to index its metadata records (F4\u2011MD), so it covers both your data and its metadata.\n\nIf you have to pick one, use Zenodo, since it's the only one the profile names for both data and metadata. Deposit in NIRD RDA as well if you have a Norwegian project allocation.\n\nCOMMUNITY_CHOICE: NIRD-RDA, Zenodo",
+ "isError": false,
+ "costUsd": 0.0615014,
+ "seconds": 10.7,
+ "stderr": ""
+}

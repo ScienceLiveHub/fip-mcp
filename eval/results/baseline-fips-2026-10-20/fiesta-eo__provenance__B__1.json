@@ -1,0 +1,56 @@
+{
+ "id": "fiesta-eo:provenance",
+ "community": "fiesta-eo",
+ "topic": "provenance",
+ "question": "R1.2-D",
+ "expected": [
+  "NetCDF CF-1.11"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). How should I describe the provenance of my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "B",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "The FIESTA Earth Observation FAIR Implementation Profile (FIP) answers this directly.\n\n**For your datasets (FAIR principle R1.2, data):** record provenance with **NetCDF following the CF Conventions v1.11**. That means filling in the CF global attributes, such as `history`, `source`, `institution`, `references` and `comment`. It also means using CF variable and ancillary metadata to record where the data came from and how it was processed (https://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html).\n\n**For your metadata records (R1.2, metadata):** the community uses **RO-Crate** (https://w3id.org/ro/crate). This fits Galaxy well, because Galaxy can export workflow runs as RO-Crates, which record the processing history.\n\nSo write the CF-1.11 provenance attributes into the NetCDF files, and package the files together with the Galaxy workflow and run information as an RO-Crate.\n\nCOMMUNITY_CHOICE: NetCDF CF-1.11",
+ "isError": false,
+ "costUsd": 0.0602738,
+ "seconds": 18.6,
+ "stderr": ""
+}

@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-eo:repository",
+ "community": "fiesta-eo",
+ "topic": "repository",
+ "question": "F4-D",
+ "expected": [
+  "NIRD-RDA",
+  "Zenodo"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Where should I deposit my image datasets so that they are findable?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't find any record of what the FIESTA Earth Observation community has agreed on for depositing image datasets. Its FAIR Implementation Profile (FIP) isn't available to me here, and I have no tool in this session that could read local files or look it up online. So I can't tell you your community's agreed repository.\n\nSome general options, until you can check your community's FIP (for example on the FIP Wizard or FAIR Connect) or ask the FIESTA coordinators:\n- **Zenodo:** a general-purpose repository that gives your data a DOI. It works well with Galaxy workflows and is widely used in the FAIR Image Data Workflows in Galaxy community.\n- **Earth-observation-specific places:** a national or ESA/Copernicus-linked data centre, or PANGAEA. Describe your data with standard EO metadata (such as STAC or ISO 19115) so it's easier to find.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0333672,
+ "seconds": 7.8,
+ "stderr": ""
+}

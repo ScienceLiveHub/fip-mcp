@@ -1,0 +1,10 @@
+[
+ {
+  "id": "fiesta-bio:format",
+  "community": "fiesta-bio",
+  "topic": "format",
+  "question": "I1-D",
+  "expected": "NOT_DECLARED",
+  "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which file format should I use for my image datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)"
+ }
+]

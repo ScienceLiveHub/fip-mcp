@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-astro:vocabulary",
+ "community": "fiesta-astro",
+ "topic": "vocabulary",
+ "question": "I2-D",
+ "expected": [
+  "IVOA Vocabulary: Unified Astronomy Thesaurus"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which vocabulary should I use to annotate my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't tell which vocabulary your community has agreed on. I don't have a reliable record of a FAIR Implementation Profile (FIP) for FIESTA Astronomy or for \"FAIR Image Data Workflows in Galaxy\" that names one. I also have no file or web tools in this session, so I couldn't look it up. Naming a specific vocabulary would be a guess.\n\nHere's how to find out:\n- **FIP Wizard / FAIR Connect:** search for your community's FIP. Look at the answer to the question on metadata vocabularies (F2/I2, \"semantic artefacts\").\n- **Ask your community coordinators** whether a FIP has been published and what it declares.\n\nIf nothing has been agreed, astronomy communities often use the **IVOA Unified Content Descriptors (UCD)** and the **Unified Astronomy Thesaurus (UAT)**. That's general practice, not something your community has chosen.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0323192,
+ "seconds": 7.6,
+ "stderr": ""
+}

@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-bio:identifier",
+ "community": "fiesta-bio",
+ "topic": "identifier",
+ "question": "F1-D",
+ "expected": [
+  "URI"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). What kind of persistent identifier should my datasets have?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "For bioimaging datasets the usual choice is a **DOI**, which you get by depositing in a repository such as Zenodo. If you deposit in the **BioImage Archive**, your dataset gets an accession number (S-BIAD\u2026), and that accession can also be cited through a DOI. Both options resolve globally, stay stable over time and are widely accepted for citation. They also work well with Galaxy workflows: Galaxy can import from and export to Zenodo, and OME-Zarr or OME-TIFF data can be linked by DOI.\n\nI couldn't confirm which identifier your community has formally agreed on. I can't see your community's FAIR Implementation Profile (FIP) for FIESTA / \"FAIR Image Data Workflows in Galaxy\" from here, so I'd rather not guess. You can look up the \"identifier\" declaration in that FIP on the FIP Wizard or GO FAIR site.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0331672,
+ "seconds": 8.1,
+ "stderr": ""
+}

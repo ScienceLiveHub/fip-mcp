@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-astro:repository",
+ "community": "fiesta-astro",
+ "topic": "repository",
+ "question": "F4-D",
+ "expected": [
+  "Zenodo"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). Where should I deposit my image datasets so that they are findable?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't find a record of what the FIESTA Astronomy community chose for depositing image data. I don't know of a published FAIR Implementation Profile (FIP) from them, and I have no tools here to look one up, so I won't guess.\n\nSome general options, which are not your community's agreed choice:\n- **Zenodo**, often used by Galaxy communities. It gives each dataset a DOI and good metadata indexing.\n- **Astronomy archives** such as those linked through the IVOA or CDS services, or a mission or observatory archive. These make data findable through Virtual Observatory registries.\n- **Image-specific archives** such as the BioImage Archive or IDR. These mostly serve life sciences, so they're probably a poor fit for astronomy.\n\nTo find the actual agreed resource, check your community's FIP on the FIP Wizard or FAIR Connect, or ask the FIESTA or Galaxy Image Community coordinators.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0312912,
+ "seconds": 6.5,
+ "stderr": ""
+}

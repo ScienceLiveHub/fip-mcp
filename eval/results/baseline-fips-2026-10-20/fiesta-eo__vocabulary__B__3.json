@@ -1,0 +1,56 @@
+{
+ "id": "fiesta-eo:vocabulary",
+ "community": "fiesta-eo",
+ "topic": "vocabulary",
+ "question": "I2-D",
+ "expected": [
+  "NetCDF CF-1.11"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which vocabulary should I use to annotate my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "B",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "Your community's FAIR Implementation Profile (FIESTA EO FIP) sets a vocabulary for annotating datasets (question I2\u2011D): the **NetCDF Climate and Forecast (CF) Metadata Conventions, version 1.11** (https://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html). In practice, that means using CF standard names, units and attributes in your NetCDF files.\n\nThe profile treats metadata records as a separate question (I2\u2011MD). For those it chooses **RO\u2011Crate**, which uses schema.org terms in JSON\u2011LD.\n\nCOMMUNITY_CHOICE: NetCDF CF-1.11",
+ "isError": false,
+ "costUsd": 0.0565778,
+ "seconds": 10.3,
+ "stderr": ""
+}

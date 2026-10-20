@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-eo:licence",
+ "community": "fiesta-eo",
+ "topic": "licence",
+ "question": "R1.1-D",
+ "expected": [
+  "CC BY 4.0"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which licence should I put on my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't tell which licence your FIESTA Earth Observation community agreed on. I couldn't find your community's FAIR Implementation Profile (FIP) or any record of its decisions, and I don't have a reliable memory of which licence it declared.\n\n**What to do:**\n- **Check your community's FIP.** FIPs are published as nanopublications and can be browsed in the FIP Wizard or on fairdatapoint.org. Look under the usage-licence question (FAIR principle R1.1) for the FIESTA EO / \"FAIR Image Data Workflows in Galaxy\" profile.\n- **Ask your data steward or the FIESTA coordinators.**\n- **If they haven't declared one,** CC BY 4.0 is the usual default for openly shared research and EO datasets. Use CC0 if you want no conditions at all, which can make reuse and aggregation easier. Whichever you choose, give its SPDX identifier in your metadata (e.g. `CC-BY-4.0`) so it's machine-readable.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0323912,
+ "seconds": 6.7,
+ "stderr": ""
+}

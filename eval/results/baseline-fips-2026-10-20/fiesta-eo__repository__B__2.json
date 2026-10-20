@@ -1,0 +1,57 @@
+{
+ "id": "fiesta-eo:repository",
+ "community": "fiesta-eo",
+ "topic": "repository",
+ "question": "F4-D",
+ "expected": [
+  "NIRD-RDA",
+  "Zenodo"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Where should I deposit my image datasets so that they are findable?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "B",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "According to the FIESTA Earth Observation FAIR Implementation Profile (latest version, findability question F4), your community has agreed on two places:\n\n- **For the datasets:** use the **NIRD Research Data Archive (NIRD RDA)** (https://archive.sigma2.no) and/or **Zenodo**. NIRD RDA is the Norwegian national archive and keeps data discoverable for at least 10 years. Zenodo is the general-purpose repository run by CERN and OpenAIRE.\n- **For the metadata records:** use **Zenodo**.\n\nZenodo appears in both answers, so depositing there covers data and metadata indexing. If you're Norway-based, you can also use NIRD RDA for the data.\n\nCOMMUNITY_CHOICE: NIRD-RDA, Zenodo",
+ "isError": false,
+ "costUsd": 0.0647322,
+ "seconds": 12.5,
+ "stderr": ""
+}

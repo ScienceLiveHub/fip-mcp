@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-astro:licence",
+ "community": "fiesta-astro",
+ "topic": "licence",
+ "question": "R1.1-D",
+ "expected": [
+  "CC BY 4.0"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which licence should I put on my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't find any record of a licence that the FIESTA Astronomy community or the wider \"FAIR Image Data Workflows in Galaxy\" community has agreed on. I have no tools here to read files or search the FAIR Implementation Profile (FIP) entries for your community, so I can't tell whether they named one.\n\nUntil you can confirm, here is the usual practice:\n- **CC BY 4.0** is the most common choice for astronomy and image datasets. Others can reuse the data as long as they credit you.\n- **CC0 1.0** gives the most reuse freedom. Many data repositories, such as Zenodo and those for observatory data, recommend it.\n\nTo be sure, look at your community's FIP (for example, on the FIP Wizard or the FAIR Connect nanopublications) for the \"data usage licence\" question. You can also ask your community's FAIR coordinators. If your funder or the data repository you use requires a specific licence, that requirement comes first.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0322032,
+ "seconds": 7.0,
+ "stderr": ""
+}

@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-astro:format",
+ "community": "fiesta-astro",
+ "topic": "format",
+ "question": "I1-D",
+ "expected": [
+  "Flexible Image Transport System"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which file format should I use for my image datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "FITS is the usual format for astronomical image data. It's an IAU-endorsed standard, it keeps metadata in its headers, and Galaxy and most astronomy tools support it well. Many imaging workflows also convert to OME-TIFF or OME-Zarr when they need to work with general bioimage tools.\n\nI don't have a record of what the FIESTA Astronomy community formally agreed in its FAIR Implementation Profile, and I couldn't look it up from here. So FITS is a sensible default, not a confirmed community decision. Check your community's FIP on the FIP Wizard or FAIR Connect to see what it actually declared.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0303592,
+ "seconds": 6.4,
+ "stderr": ""
+}

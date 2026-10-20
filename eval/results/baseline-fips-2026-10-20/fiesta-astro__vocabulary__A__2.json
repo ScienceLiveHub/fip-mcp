@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-astro:vocabulary",
+ "community": "fiesta-astro",
+ "topic": "vocabulary",
+ "question": "I2-D",
+ "expected": [
+  "IVOA Vocabulary: Unified Astronomy Thesaurus"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which vocabulary should I use to annotate my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't say which vocabulary your community picked. I don't have a reliable record of the FAIR Implementation Profile (FIP) that the FIESTA Astronomy / \"FAIR Image Data Workflows in Galaxy\" community published. I also have no tools here that could look it up, and I'd rather not guess.\n\nTo find out:\n- Look up your community's FIP in the **FIP Wizard** (fip-wizard.ds-wizard.org) or on **FAIR Connect**. Check the answer to the FAIR principle **I2**, which asks which vocabularies the community uses for metadata and data.\n- If you just need a sensible default: astronomy usually relies on **IVOA vocabularies** and the **Unified Astronomy Thesaurus (UAT)**. Galaxy image workflows often add **EDAM** (including EDAM-Bioimaging). This isn't what your community agreed on, so check the FIP before using it.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0329952,
+ "seconds": 7.2,
+ "stderr": ""
+}

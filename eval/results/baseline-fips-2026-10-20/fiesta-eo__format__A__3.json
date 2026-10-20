@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-eo:format",
+ "community": "fiesta-eo",
+ "topic": "format",
+ "question": "I1-D",
+ "expected": [
+  "NetCDF"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which file format should I use for my image datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I couldn't find a record of which image file format the FIESTA Earth Observation community (part of FAIR Image Data Workflows in Galaxy) has agreed on. I don't have a copy of your community's FAIR Implementation Profile, and none of my tools here can read local files or search the web, so I can't check.\n\nThese are the usual choices in Earth Observation work, all of which Galaxy supports:\n- **GeoTIFF or Cloud-Optimized GeoTIFF (COG)**: for raster or satellite scenes that need georeferencing.\n- **NetCDF (CF conventions)**: for multidimensional data cubes with time, bands or variables.\n- **Zarr (GeoZarr)**: for large chunked arrays you read from cloud storage. It also fits with OME-Zarr, which the wider FAIR image community uses.\n\nBefore you pick one, check your community's FAIR Implementation Profile (for example on the FIP Wizard or FAIR Connect) or ask the community coordinators.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0326272,
+ "seconds": 7.2,
+ "stderr": ""
+}

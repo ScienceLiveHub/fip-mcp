@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-eo:identifier",
+ "community": "fiesta-eo",
+ "topic": "identifier",
+ "question": "F1-D",
+ "expected": [
+  "DOI"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). What kind of persistent identifier should my datasets have?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 1,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't find a record of what the FIESTA Earth Observation / \"FAIR Image Data Workflows in Galaxy\" community has declared for dataset persistent identifiers. That would normally be written down in the community's FAIR Implementation Profile (FIP, a document listing the standards a community has agreed to use). I don't have access to it here, and I don't reliably know what it says.\n\nHere is what's usually done:\n- **DOIs** (for example from DataCite, minted through Zenodo or a similar repository) are the most common choice for Earth Observation and imaging datasets. They also work well with Galaxy workflows.\n- **Handles** or **ARKs** are alternatives that some institutional repositories use.\n\nTo confirm what your community has agreed on, check the FIESTA FIP on the FIP Wizard or FAIR Connect, or ask the community coordinators. If you can share the FIP, I can read it and tell you exactly.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0342072,
+ "seconds": 12.1,
+ "stderr": ""
+}

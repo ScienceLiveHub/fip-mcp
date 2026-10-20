@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-eo:licence",
+ "community": "fiesta-eo",
+ "topic": "licence",
+ "question": "R1.1-D",
+ "expected": [
+  "CC BY 4.0"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which licence should I put on my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't tell what licence your community agreed on. I couldn't find FIESTA's FAIR Implementation Profile (FIP) or any other record of the community's decision. I also don't have file-reading tools here, so I couldn't check your working directory either.\n\n**Practical advice:**\n- **CC BY 4.0** is the most common choice for open Earth Observation and image data. It's machine-readable, widely recognised, and lets others reuse your data as long as they credit you. **CC0** is a good option if you want no conditions at all.\n- If your data comes from upstream sources, check their terms. For example, Copernicus/Sentinel data has its own free, open licence that asks you to acknowledge the source.\n- Before you publish, look up your community's FIP on the FIP Wizard or FAIR Connect. If it names a licence for \"data usage licence\" (FAIR principle R1.1), use that one. You can also ask the community coordinators.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0316832,
+ "seconds": 6.9,
+ "stderr": ""
+}

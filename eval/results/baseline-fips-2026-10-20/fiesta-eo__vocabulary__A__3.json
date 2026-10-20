@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-eo:vocabulary",
+ "community": "fiesta-eo",
+ "topic": "vocabulary",
+ "question": "I2-D",
+ "expected": [
+  "NetCDF CF-1.11"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Which vocabulary should I use to annotate my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't see a record of which vocabulary the FIESTA Earth Observation community (within \"FAIR Image Data Workflows in Galaxy\") has agreed on. In this session I have no way to read files or look up FAIR Implementation Profiles (FIPs), so I can't check what your community declared.\n\nSome vocabularies are commonly used for Earth Observation data, but these are general options and not your community's decision:\n- **EDAM** (including EDAM-bioimaging) is often used for annotating Galaxy tools and workflows.\n- **GCMD Science Keywords** (NASA) and **CF Standard Names** are common for EO and climate variables.\n- **INSPIRE themes** and **GEMET** are used for European geospatial data.\n\nTo find your community's actual choice, look at its FAIR Implementation Profile on the FIP Wizard or FAIR Connect, or ask the community coordinators.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.030819199999999998,
+ "seconds": 6.8,
+ "stderr": ""
+}

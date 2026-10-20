@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-eo:provenance",
+ "community": "fiesta-eo",
+ "topic": "provenance",
+ "question": "R1.2-D",
+ "expected": [
+  "NetCDF CF-1.11"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). How should I describe the provenance of my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't find a record of what the FIESTA Earth Observation community has declared for provenance, such as an entry in its FAIR Implementation Profile. I also have no file-reading tools in this session, so I couldn't check your working directory. Here is what usually works for image and Earth Observation (EO) data in Galaxy, which you should check against your community's own FAIR Implementation Profile or ask its maintainers about:\n\n- **W3C PROV (PROV-O)** is the general standard for describing which entities, activities and agents produced your data.\n- **Workflow Run RO-Crate**, which Galaxy can export, records the workflow, tool versions, parameters, inputs and outputs of each run. This fits Galaxy-based image workflows best.\n- **ISO 19115-2 / ISO 19115-3 lineage elements** cover EO-specific processing steps and sources. STAC's `processing` extension is a lighter option for this.\n- **Persistent identifiers** (DOIs for datasets and workflows, ORCIDs for people) make the provenance chain something machines can follow.\n\nIf you can share the community's FAIR Implementation Profile, or a link to its FAIR Connect/FIP Wizard entry, I can tell you exactly which resource was agreed for this question (usually FAIR principle R1.2).\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.034071199999999996,
+ "seconds": 12.5,
+ "stderr": ""
+}

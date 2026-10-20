@@ -1,0 +1,38 @@
+{
+ "id": "fiesta-eo:provenance",
+ "community": "fiesta-eo",
+ "topic": "provenance",
+ "question": "R1.2-D",
+ "expected": [
+  "NetCDF CF-1.11"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). How should I describe the provenance of my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I don't have a record of the FAIR Implementation Profile (FIP) for the FIESTA Earth Observation / \"FAIR Image Data Workflows in Galaxy\" community. I also have no tools here that could look it up, so I can't say which provenance resource your community agreed on.\n\nGeneral advice, not your community's decision:\n- **W3C PROV-O / PROV-DM** is the common default for recording provenance in machine-readable form: which entities, activities and agents were involved.\n- **Workflow Run RO-Crate** (Provenance Run Crate profile) is a natural fit for Galaxy, which can export workflow invocations in this format. It captures the inputs, tool versions, parameters and outputs.\n- For Earth Observation data, the lineage fields in **ISO 19115-2** and the STAC `processing` extension are also widely used.\n\nTo find your community's actual choice, check its FIP on the FIP Wizard (fip-wizard.ana.dev.go-fair.org) or its nanopublications. Look for the answer to the question on the provenance model (FIP question R1.2).\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0327312,
+ "seconds": 7.0,
+ "stderr": ""
+}

@@ -1,0 +1,39 @@
+{
+ "id": "fiesta-eo:repository",
+ "community": "fiesta-eo",
+ "topic": "repository",
+ "question": "F4-D",
+ "expected": [
+  "NIRD-RDA",
+  "Zenodo"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Earth Observation community (part of the 'FAIR Image Data Workflows in Galaxy' community). Where should I deposit my image datasets so that they are findable?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "A",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "Monitor",
+  "PushNotification",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow"
+ ],
+ "mcpServers": [],
+ "toolCalls": [],
+ "answer": "I can't tell which repository the FIESTA Earth Observation community has agreed on. I don't know of a published FAIR Implementation Profile or other community declaration that names one, and I had no way to look at any local files to check.\n\nUntil you can confirm with your community, these are the usual options:\n\n- **Zenodo**: a general-purpose repository that gives each dataset a DOI. It integrates with Galaxy and is commonly used by Galaxy communities.\n- **An Earth Observation data portal** such as PANGAEA, or a Copernicus or ESA-affiliated archive, if your data fits what they accept.\n- **Data catalogues**: register your datasets in a STAC catalogue or with GEO/GEOSS so EO tools can find them.\n\nWhichever you choose, give each dataset a persistent identifier and rich metadata, and use an open format such as Cloud-Optimized GeoTIFF, NetCDF or Zarr. To find the agreed choice, ask the FIESTA or Galaxy FAIR Image Data community coordinators, or check their FAIR Implementation Profile if they have published one.\n\nCOMMUNITY_CHOICE: DONT_KNOW",
+ "isError": false,
+ "costUsd": 0.0335272,
+ "seconds": 7.6,
+ "stderr": ""
+}

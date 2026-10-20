@@ -1,0 +1,54 @@
+{
+ "id": "fiesta-bio:provenance",
+ "community": "fiesta-bio",
+ "topic": "provenance",
+ "question": "R1.2-D",
+ "expected": "NOT_DECLARED",
+ "prompt": "I'm a researcher in the FIESTA Bioimaging community (part of the 'FAIR Image Data Workflows in Galaxy' community). How should I describe the provenance of my datasets?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "B",
+ "run": 3,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "Your community hasn't picked a provenance schema. The latest FIESTA Bioimaging FAIR Implementation Profile (FIP) leaves both provenance questions open on purpose:\n\n- **R1.2-D** (provenance of your datasets): no choice declared.\n- **R1.2-MD** (provenance of your metadata records): no choice declared.\n\nSo there's no community standard you need to follow here. Some practical suggestions, which are mine and not your community's:\n- Galaxy already records workflow and tool provenance, and can export it (for example as Workflow Run RO-Crate). That gives you a reasonable default for now.\n- Ask the FIP maintainers to add a provenance standard, so the community settles on one.\n\nCOMMUNITY_CHOICE: NOT_DECLARED",
+ "isError": false,
+ "costUsd": 0.059516200000000005,
+ "seconds": 10.8,
+ "stderr": ""
+}

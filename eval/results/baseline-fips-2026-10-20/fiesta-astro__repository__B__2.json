@@ -1,0 +1,56 @@
+{
+ "id": "fiesta-astro:repository",
+ "community": "fiesta-astro",
+ "topic": "repository",
+ "question": "F4-D",
+ "expected": [
+  "Zenodo"
+ ],
+ "prompt": "I'm a researcher in the FIESTA Astronomy community (part of the 'FAIR Image Data Workflows in Galaxy' community). Where should I deposit my image datasets so that they are findable?\n\nAnswer briefly. On the last line write exactly one of:\nCOMMUNITY_CHOICE: <the resource(s) my community has agreed on, comma-separated>\nCOMMUNITY_CHOICE: NOT_DECLARED   (my community has explicitly not agreed on one)\nCOMMUNITY_CHOICE: DONT_KNOW      (you cannot tell what my community agreed)",
+ "condition": "B",
+ "run": 2,
+ "model": "claude-opus-5-5",
+ "toolsAvailable": [
+  "CronCreate",
+  "CronDelete",
+  "CronList",
+  "DesignSync",
+  "EnterWorktree",
+  "ExitWorktree",
+  "ListAgents",
+  "ListMcpResourcesTool",
+  "Monitor",
+  "PushNotification",
+  "ReadMcpResourceDirTool",
+  "ReadMcpResourceTool",
+  "RemoteTrigger",
+  "ReportFindings",
+  "ScheduleWakeup",
+  "SendMessage",
+  "TaskStop",
+  "ToolSearch",
+  "Workflow",
+  "mcp__fip__check",
+  "mcp__fip__communities",
+  "mcp__fip__crosswalk",
+  "mcp__fip__profile",
+  "mcp__fip__recommend"
+ ],
+ "mcpServers": [
+  {
+   "name": "fip",
+   "status": "connected",
+   "source": "dynamic"
+  }
+ ],
+ "toolCalls": [
+  "ToolSearch",
+  "mcp__fip__communities",
+  "mcp__fip__recommend"
+ ],
+ "answer": "Your community's FAIR Implementation Profile (FIESTA Astro FIP) says to **deposit your image datasets in Zenodo**, which is where your datasets get indexed (question F4\u2011D).\n\nTo make them findable, your community also agreed to register the **metadata records** in the **IVOA Registry of Registries (RofR)** (question F4\u2011MD). That way the datasets can be discovered through Virtual Observatory tools.\n\nCOMMUNITY_CHOICE: Zenodo",
+ "isError": false,
+ "costUsd": 0.0569444,
+ "seconds": 8.7,
+ "stderr": ""
+}
