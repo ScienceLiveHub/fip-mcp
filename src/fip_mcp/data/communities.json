@@ -1,0 +1,6 @@
+{
+  "_comment": "Short names for FIPs. Any entry is resolved to its latest version on the nanopub network at load time.",
+  "fiesta-astro": {"fip": "https://w3id.org/np/RA0nlMrlMJFm_NqQvPuES73-0rNa8A35VXlHWLMtWrRuY", "title": "FIESTA Astronomy (Galaxy imaging)"},
+  "fiesta-bio": {"fip": "https://w3id.org/np/RAiEW_g7wsXXMJINFJ3Qx7h2avPu1rx4yp1SE7Mw8jFkU", "title": "FIESTA Bioimaging (Galaxy imaging)"},
+  "fiesta-eo": {"fip": "https://w3id.org/np/RAQXwdUrfZ40k2MdeDv9fokzyh35UKuN3w17G2yO4Wm8A", "title": "FIESTA Earth Observation (Galaxy imaging)"}
+}
