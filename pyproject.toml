@@ -1,15 +1,29 @@
 [project]
 name = "fip-mcp"
-version = "0.0.1"
+version = "0.1.0"
 description = "MCP server that turns FAIR Implementation Profiles into guidance and deterministic compliance checks for AI agents."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [{ name = "Anne Fouilloux" }]
+keywords = ["mcp", "FAIR", "FAIR Implementation Profile", "FIP", "nanopublication", "research-data", "science-live"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+]
 dependencies = [
     "mcp>=1.2.0,<2",
     "rdflib>=7",
 ]
+
+[project.urls]
+Homepage = "https://github.com/ScienceLiveHub/fip-mcp"
+Repository = "https://github.com/ScienceLiveHub/fip-mcp"
+"FIP Ontology" = "https://w3id.org/fair/fip/terms/FIP-Ontology"
+"Science Live" = "https://sciencelive4all.org"
 
 [project.scripts]
 fip-mcp = "fip_mcp.server:main"

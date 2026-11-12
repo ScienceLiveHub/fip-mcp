@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+title: fip-mcp
+message: >-
+  If you use fip-mcp, please cite it using the metadata in this file.
+type: software
+authors:
+  - family-names: Fouilloux
+    given-names: Anne
+    orcid: https://orcid.org/0000-0002-1784-2920
+    affiliation: LifeWatch ERIC
+repository-code: https://github.com/ScienceLiveHub/fip-mcp
+url: https://sciencelive4all.org
+abstract: >-
+  An MCP server that turns community FAIR Implementation Profiles (FIPs),
+  published as nanopublications, into guidance and deterministic compliance
+  checks for AI agents. An agent asks the FIP what the community agreed before
+  it suggests a repository, format, licence or vocabulary, and can check a
+  folder or a Zenodo record against the FIP. Verdicts are computed by code;
+  resources that cannot be tested are reported as manual, and questions the
+  community left open are reported as gaps. Developed in the OSCARS-FIESTA
+  project (EU Horizon Europe grant 101129751) and maintained by the Science
+  Live community.
+keywords:
+  - FAIR
+  - FAIR Implementation Profile
+  - FIP
+  - nanopublications
+  - research data management
+  - MCP
+  - AI agents
+  - Science Live
+license: MIT
+version: 0.1.0
