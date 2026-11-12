@@ -31,3 +31,8 @@ keywords:
   - Science Live
 license: MIT
 version: 0.1.0
+doi: 10.5281/zenodo.24155500
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24155500
+    description: Concept DOI (resolves to the latest version)

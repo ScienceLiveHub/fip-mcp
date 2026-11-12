@@ -2,6 +2,8 @@
 
 <!-- mcp-name: org.sciencelive4all/fip-mcp -->
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24155500.svg)](https://doi.org/10.5281/zenodo.24155500) [![PyPI](https://img.shields.io/pypi/v/fip-mcp)](https://pypi.org/project/fip-mcp/)
+
 An MCP server that turns community **FAIR Implementation Profiles (FIPs)** into
 guidance and deterministic compliance checks for AI agents such as Claude Code.
 
@@ -81,7 +83,10 @@ python eval/score.py eval/results/<name>
 
 ## Citation
 
-Please cite fip-mcp with the metadata in [`CITATION.cff`](CITATION.cff).
+Please cite fip-mcp with the metadata in [`CITATION.cff`](CITATION.cff). The concept DOI
+[10.5281/zenodo.24155500](https://doi.org/10.5281/zenodo.24155500) always resolves to the
+latest version; each release also has its own DOI (v0.1.0:
+[10.5281/zenodo.24155501](https://doi.org/10.5281/zenodo.24155501)).
 
 ## Funding
 
