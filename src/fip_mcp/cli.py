@@ -21,7 +21,17 @@ def main() -> None:
     x = sub.add_parser("crosswalk")
     x.add_argument("source")
     x.add_argument("target")
+    m = sub.add_parser("compare", help="FIPs/R-FIPs side by side, one row per FAIR principle")
+    m.add_argument("profiles", nargs="+")
+    m.add_argument("--name", action="append", dest="names", help="column header (repeat, in order)")
+    m.add_argument("--enables-only", action="store_true",
+                   help="leave out R-FIP resources that only support (not enable) a principle")
+    m.add_argument("--xlsx", help="also write the table to this .xlsx file")
     a = p.parse_args()
+    if a.cmd == "compare":
+        out = service.compare(a.profiles, a.names, not a.enables_only, a.xlsx)
+        print(json.dumps(out, indent=2, ensure_ascii=False))
+        return
     args = [v for k, v in vars(a).items() if k != "cmd"]
     print(json.dumps(getattr(service, a.cmd)(*args), indent=2, ensure_ascii=False))
 

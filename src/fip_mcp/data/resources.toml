@@ -1,0 +1,69 @@
+# Facts about FAIR Enabling Resources that neither their nanopubs nor public
+# registries (Wikidata, SPDX, DataCite) provide, but that a check needs.
+#
+# This file is data, not code: edit it, or put your own entries in
+# ~/.config/fip-mcp/resources.toml (or the file named by FIP_MCP_RESOURCES);
+# user entries are read first and win. Every entry must say where the fact
+# comes from (`source`). Prefer fixing the resource's nanopub (e.g. adding a
+# skos:exactMatch to its Wikidata item) over adding an entry here.
+#
+# `match`: resource labels (any part of "A | B", case-insensitive) or URIs.
+# Facts a check can use:
+#   files               file names whose presence shows the resource is used
+#   extensions          file extensions (without dot)
+#   media_types         IANA media types
+#   url_scheme          URI scheme every URL of the object must use
+#   access              Zenodo access_right value (open, embargoed, restricted, closed)
+#   hosts               repository hosts (the object must be deposited there)
+#   registration_agency DOI registration agency (as reported by doi.org/ra)
+#   spdx                SPDX licence id
+#   wikidata            Wikidata item to read extensions, media types and id patterns from
+
+[[resource]]
+match = ["RO-Crate", "Research Object Crate"]
+files = ["ro-crate-metadata.json"]
+source = "RO-Crate 1.1 specification, Metadata Descriptor: https://www.researchobject.org/ro-crate/specification/1.1/root-data-entity.html"
+
+[[resource]]
+match = ["JSON-LD"]
+files = ["ro-crate-metadata.json"]
+source = "RO-Crate 1.1 specification: the RO-Crate Metadata File is JSON-LD (extensions .jsonld come from Wikidata)"
+
+[[resource]]
+match = ["HTTPS", "Hypertext Transfer Protocol Secure"]
+url_scheme = "https"
+source = "RFC 9110, section 4.2.2 (https URI scheme)"
+
+[[resource]]
+match = ["HTTP", "Hypertext Transfer Protocol"]
+url_scheme = "http"
+source = "RFC 9110, section 4.2.1 (http URI scheme)"
+
+[[resource]]
+match = ["Open Data", "OPENDATA", "Open Access"]
+access = "open"
+source = "Zenodo REST API, metadata.access_right: https://developers.zenodo.org/#representation"
+
+[[resource]]
+match = ["DataCite", "DataCite Metadata Schema", "DataCite Metadata Scheme"]
+registration_agency = "DataCite"
+source = "DOIs registered with DataCite carry DataCite metadata; agency from https://doi.org/ra/<doi>"
+
+[[resource]]
+match = ["ZMPP", "Zenodo Metadata Preservation Policy"]
+hosts = ["zenodo.org"]
+source = "The policy applies to records deposited in Zenodo: https://about.zenodo.org/policies/"
+
+[[resource]]
+match = ["Zarr v3"]
+wikidata = "Q130377195"
+files = ["zarr.json"]
+source = "Zarr v3 core specification, metadata document zarr.json: https://zarr-specs.readthedocs.io/en/latest/v3/core/; Wikidata Q130377195 (the resource nanopub has no Wikidata link yet)"
+
+# File extensions that are documentation or code, not data. Files with these
+# extensions are not reported as undeclared data formats.
+[ignore]
+extensions = ["md", "txt", "rst", "html", "pdf", "py", "ipynb", "r", "sh", "js", "css",
+              "json", "jsonld", "yml", "yaml", "toml", "cfg", "ini", "cff", "lock",
+              "gitignore", "gitattributes", "ga", "smk"]
+source = "fip-mcp default; adjust per community"

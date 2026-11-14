@@ -3,7 +3,7 @@
   "name": "org.sciencelive4all/fip-mcp",
   "title": "FAIR Implementation Profiles",
   "description": "Community FAIR Implementation Profiles as guidance and deterministic checks for AI agents.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "websiteUrl": "https://sciencelive4all.org",
   "repository": {
     "url": "https://github.com/ScienceLiveHub/fip-mcp",
@@ -13,7 +13,7 @@
     {
       "registryType": "pypi",
       "identifier": "fip-mcp",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "transport": {
         "type": "stdio"
       }

@@ -27,6 +27,7 @@ the [Science Live](https://sciencelive4all.org) community.
 | `recommend` | What the community agreed for a topic (`format`, `repository`, `licence`, …). |
 | `check` | Checks a folder or Zenodo record against the FIP: `pass` / `fail` (+ `fix`) / `manual` / `no-choice`. |
 | `crosswalk` | What changes when a workflow or dataset moves between two communities. |
+| `compare` | Several FIPs and R-FIPs side by side: one row per FAIR principle, one column per profile, a *Principles Covered* count; optional `.xlsx`. |
 
 Design rules:
 
@@ -38,6 +39,27 @@ Design rules:
 - **Latest version.** The FIP Wizard republishes a FIP *and* its declaration index,
   and both supersede their predecessors. The resolver only follows successors that
   are themselves FIPs.
+- **Nothing hard-coded: the network is the source.** Question wording and the
+  principle each question refers to come from the FIP ontology term nanopubs;
+  principle wording from the FAIR principles terms. A question the ontology does
+  not define is reported as such, never filled in.
+- **R-FIPs read like Nanodash.** A Reference FIP (a community's target practice)
+  lists recommended resources without naming questions. Each resource is grouped
+  under the principles its FIP types `enable` or `support`, as stated by the type
+  nanopubs, the same relations Nanodash uses on the R-FIP page. "Supports" is
+  labelled `(supports)` and can be left out (`--enables-only`).
+- **Checks use registries, not built-in tables.** To test a declared resource
+  (is there a NetCDF file? is the licence CC BY 4.0? is it deposited in Zenodo?)
+  fip-mcp looks the facts up: the resource nanopub's own links and URL, Wikidata
+  (file extensions P1195, media types P1163, identifier patterns P1793; an
+  ambiguous label match is not used), the SPDX License List, DataCite and doi.org
+  (which repository and agency minted a DOI). Facts no registry holds (e.g. "an
+  RO-Crate is a `ro-crate-metadata.json` file") live in a config file,
+  `src/fip_mcp/data/resources.toml`, each with its source; your own entries go in
+  `~/.config/fip-mcp/resources.toml` (or `$FIP_MCP_RESOURCES`) and win. Every
+  verdict lists where its facts came from; a resource with no fact is `manual`.
+  The lasting fix is upstream: a `skos:exactMatch` from a resource nanopub to its
+  Wikidata item makes the lookup exact.
 
 ## Install and use
 
@@ -46,10 +68,20 @@ pipx install fip-mcp
 claude mcp add fip -s user -- fip-mcp     # as an MCP server
 fip-check check fiesta-eo 10.5281/zenodo.20960690   # same operations from the shell
 fip-check crosswalk fiesta-bio fiesta-eo
+
+# As-Is FIP vs Reference FIPs, written to Excel
+fip-check compare https://w3id.org/np/RA9VkRpjqbKT1AUypSJciQfL0RLn0ZJ8b5M8EZQmhS_l8 \
+                  https://w3id.org/np/RAxrU7wqSPR2KS-oso6Muj8_eWbWCXcOsa5H7chFaTVpQ \
+                  https://w3id.org/np/RAAKevI7Hcsefs-FSX-OV4urKY8KWHpZ6PY8o3DR9P_II \
+  --name "FAIR2Adapt R-FIP" --name "RiOMar R-FIP" --name "RiOMar FIP" \
+  --xlsx riomar.xlsx
 ```
 
+`--xlsx` needs `pipx install 'fip-mcp[xlsx]'` (or `pipx inject fip-mcp openpyxl`).
+
 Nanopubs are cached in `~/.cache/fip-mcp`. They are immutable, so they are cached
-for good. Version lookups always go to the network.
+for good. Version lookups always go to the network. Registry answers (Wikidata,
+SPDX, DataCite) are cached for `FIP_MCP_LOOKUP_TTL_DAYS` (default 30).
 
 For development: `pip install -e '.[dev]'` and `python -m pytest -q` (the tests need
 no network).

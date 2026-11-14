@@ -30,7 +30,7 @@ def _fail(error: Exception) -> dict:
 @mcp.tool()
 def communities() -> dict:
     """Known communities and the FIP each one has published. Any tool below also
-    accepts a FIP nanopub URI in place of a short name."""
+    accepts a FIP or Reference FIP (R-FIP) nanopub URI in place of a short name."""
     return service.communities()
 
 
@@ -54,9 +54,10 @@ def recommend(community: str, topic: str) -> dict:
     description. Call this BEFORE suggesting a repository, file format, licence,
     vocabulary or identifier scheme to a researcher in this community.
 
-    topic: identifier, metadata-schema, linking, repository, protocol, access,
-    longevity, format, vocabulary, references, licence, provenance, standards —
-    or a FAIR principle such as "I1".
+    topic: a FAIR principle such as "I1", or words from the FIP ontology's
+    question or principle wording ("identifiers", "vocabularies", "license",
+    "provenance", "search engines", ...). If nothing matches, the error lists
+    the questions with their principles: pick a principle id from it.
     """
     try:
         return service.recommend(community, topic)
@@ -92,6 +93,31 @@ def crosswalk(source: str, target: str) -> dict:
     data formats. Use it when reusing a method across disciplines."""
     try:
         return service.crosswalk(source, target)
+    except Exception as e:  # noqa: BLE001
+        return _fail(e)
+
+
+@mcp.tool()
+def compare(profiles: list[str], names: list[str] | None = None, include_supports: bool = True,
+            xlsx: str | None = None) -> dict:
+    """Compare several FIPs and Reference FIPs (R-FIPs) side by side: one row per
+    FAIR principle (only those at least one profile covers), one column per
+    profile, plus a `principlesCovered` count. Typical use: a community's As-Is
+    FIP (current practice) next to its R-FIP(s) (target practice).
+
+    profiles: short names or FIP / R-FIP nanopub URIs (latest versions are used).
+    names: optional column headers, in the same order as `profiles`.
+    include_supports: also list resources that only *support* (not enable) a
+      principle, marked "(supports)". Default true, as on Nanodash.
+    xlsx: optional path; also writes the table as an Excel file.
+
+    Placement is read from the nanopub network, never guessed: a FIP declaration
+    names its question; an R-FIP resource is grouped by the principles its FIP
+    types enable or support (FIP ontology), exactly as on the Nanodash R-FIP page.
+    Resources whose types reach no principle appear in an "Unplaced" row.
+    """
+    try:
+        return service.compare(profiles, names, include_supports, xlsx)
     except Exception as e:  # noqa: BLE001
         return _fail(e)
 

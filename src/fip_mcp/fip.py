@@ -3,6 +3,13 @@
 A FIP Wizard release is several nanopubs: the FIP itself, a declaration index,
 one nanopub per declaration, and one per FAIR Enabling Resource (FER). This
 module walks them in that order and returns one `Fip`.
+
+A Reference FIP (R-FIP) is published differently: the R-FIP nanopub has no
+declaration index, and each recommended resource is its own nanopub
+(`<resource> fip:recommended-by <community>`) derived from the R-FIP. Those do
+not name a FIP question. The principle comes from the FIP ontology on the
+network: each FIP type nanopub states which principles the type `fip:enables`
+or `fip:supports` (the same relations Nanodash groups the R-FIP page by).
 """
 from __future__ import annotations
 
@@ -15,21 +22,21 @@ from rdflib import RDF, RDFS, URIRef
 from rdflib.namespace import DCTERMS, SKOS
 
 from . import nanopub
-from .questions import question_info
+from .questions import principle_text, question_info
 
 FIP = "https://w3id.org/fair/fip/terms/"
 NPX = "http://purl.org/nanopub/x/"
+FIP_TYPE = FIP + "FAIR-Implementation-Profile"
+RFIP_TYPE = FIP + "Reference-FAIR-Implementation-Profile"
 SCHEMA_URL = URIRef("http://schema.org/url")
-
-# Every FER carries these; they say nothing about what kind of resource it is.
-GENERIC_TYPES = {"FAIR-Enabling-Resource", "Available-FAIR-Enabling-Resource",
-                 "Available-FAIR-Supporting-Resource", "FAIR-Supporting-Resource"}
 
 USE = {
     "declares-current-use-of": "current",
     "declares-planned-use-of": "planned",
     "declares-planned-replacement-of": "replaced",
 }
+# An R-FIP's resources are what the community recommends, i.e. its target practice.
+RECOMMENDED = "recommended"
 
 
 @dataclass
@@ -40,6 +47,8 @@ class Resource:
     comment: str = ""
     url: str = ""
     close_match: list[str] = field(default_factory=list)
+    label_variants: list[str] = field(default_factory=list)   # other parts of "A | B" labels
+    links: list[str] = field(default_factory=list)            # exactMatch, closeMatch, seeAlso, description source
 
 
 @dataclass
@@ -53,6 +62,8 @@ class Declaration:
     use: dict[str, list[Resource]] = field(default_factory=dict)   # current/planned/replaced
     considerations: str = ""
     case_study: str = ""
+    placement: str = "declared"   # "declared" (FIP names the question) or "ontology" (R-FIP, via its types)
+    relation: str = ""            # R-FIP only: the resource "enables" or "supports" the principle
 
 
 @dataclass
@@ -68,6 +79,7 @@ class Fip:
     index: str
     version_chain: list[str]
     declarations: list[Declaration]
+    kind: str = "FIP"             # "FIP" or "R-FIP"
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -103,15 +115,18 @@ def resource(uri: str) -> Resource:
     if not any(True for _ in ds.triples((s, None, None))):
         alt = [x for x in ds.subjects(RDFS.label, None) if _local(str(x)) == _local(uri)]
         s = alt[0] if alt else s
-    label = _one(ds, s, RDFS.label).strip() or _local(uri)
+    parts = [p.strip() for p in (_one(ds, s, RDFS.label).strip() or _local(uri)).split("|") if p.strip()]
+    links = {str(o) for p in (SKOS.exactMatch, SKOS.closeMatch, RDFS.seeAlso, URIRef(FIP + "has-description-source"))
+             for o in ds.objects(s, p)}
     return Resource(
         uri=uri,
-        label=label.split("|")[0].strip(),
-        types=sorted(t for t in (_local(str(t)) for t in ds.objects(s, RDF.type) if str(t).startswith(FIP))
-                     if t not in GENERIC_TYPES),
+        label=parts[0] if parts else _local(uri),
+        types=sorted(_local(str(t)) for t in ds.objects(s, RDF.type) if str(t).startswith(FIP)),
         comment=_one(ds, s, RDFS.comment).strip(),
-        url=_one(ds, s, SCHEMA_URL),
+        url=_one(ds, s, SCHEMA_URL) or _one(ds, s, URIRef("https://schema.org/url")),
         close_match=sorted(str(o) for o in ds.objects(s, SKOS.closeMatch)),
+        label_variants=parts[1:],
+        links=sorted(links),
     )
 
 
@@ -154,36 +169,94 @@ def _declaration(uri: str) -> Declaration:
     )
 
 
+def profile_kind(uri: str) -> str:
+    """"FIP" or "R-FIP" for a profile nanopub; raises if it is neither."""
+    if nanopub.has_type(uri, FIP_TYPE):
+        return "FIP"
+    if nanopub.has_type(uri, RFIP_TYPE):
+        return "R-FIP"
+    raise nanopub.NanopubError(f"{nanopub.np_id(uri)} is neither a FAIR Implementation Profile nor a Reference FIP")
+
+
 def load(uri: str, follow_versions: bool = True) -> Fip:
-    """Load a FIP by its nanopub URI — by default its latest version."""
+    """Load a FIP or R-FIP by its nanopub URI — by default its latest version."""
+    kind = profile_kind(uri)
+    rdf_type = FIP_TYPE if kind == "FIP" else RFIP_TYPE
     chain = [nanopub.np_id(uri)]
     if follow_versions:
-        _, chain = nanopub.latest(uri, FIP + "FAIR-Implementation-Profile")
+        _, chain = nanopub.latest(uri, rdf_type)
     ds = nanopub.fetch(chain[-1])
-    fip = None
-    for s in ds.subjects(RDF.type, URIRef(FIP + "FAIR-Implementation-Profile")):
-        fip = s
-        break
-    if fip is None:
-        raise nanopub.NanopubError(f"{chain[-1]} is not a FAIR Implementation Profile")
-    index = _one(ds, fip, URIRef(FIP + "has-declaration-index"))
-    created = next((str(o) for o in ds.objects(None, DCTERMS.created)), "")
-    decl_uris: list[str] = []
-    if index:
-        idx = nanopub.fetch(index)
-        decl_uris = sorted({str(o) for o in idx.objects(None, URIRef(NPX + "includesElement"))})
-    decls = [_declaration(u) for u in decl_uris]
+    subject = next(iter(ds.subjects(RDF.type, URIRef(rdf_type))), None)
+    if subject is None:
+        raise nanopub.NanopubError(f"{chain[-1]} is not a {kind}")
+    if kind == "FIP":
+        index = _one(ds, subject, URIRef(FIP + "has-declaration-index"))
+        decl_uris: list[str] = []
+        if index:
+            idx = nanopub.fetch(index)
+            decl_uris = sorted({str(o) for o in idx.objects(None, URIRef(NPX + "includesElement"))})
+        decls = [_declaration(u) for u in decl_uris]
+    else:
+        index = ""
+        decls = _rfip_declarations(chain[-1])
     decls.sort(key=lambda d: (d.principle == "", d.question))
     return Fip(
         uri=chain[-1],
-        label=_one(ds, fip, RDFS.label),
-        description=_one(ds, fip, DCTERMS.description),
-        version=_one(ds, fip, URIRef("https://schema.org/version")) or _one(ds, fip, URIRef("http://schema.org/version")),
-        created=created,
-        community=_one(ds, fip, URIRef(FIP + "declared-by")),
-        case_study=_one(ds, fip, URIRef(FIP + "declared-for-case-study")),
-        object_type=_one(ds, fip, URIRef(FIP + "declared-for-digital-object-type")),
+        label=_one(ds, subject, RDFS.label),
+        description=_one(ds, subject, DCTERMS.description),
+        version=_one(ds, subject, URIRef("https://schema.org/version"))
+        or _one(ds, subject, URIRef("http://schema.org/version")),
+        created=next((str(o) for o in ds.objects(None, DCTERMS.created)), ""),
+        community=_one(ds, subject, URIRef(FIP + "declared-by")),
+        case_study=_one(ds, subject, URIRef(FIP + "declared-for-case-study")),
+        object_type=_one(ds, subject, URIRef(FIP + "declared-for-digital-object-type")),
         index=nanopub.np_id(index) if index else "",
         version_chain=chain,
         declarations=decls,
+        kind=kind,
     )
+
+
+RFIP_SPARQL = """
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX fip: <https://w3id.org/fair/fip/terms/>
+PREFIX npx: <http://purl.org/nanopub/x/>
+PREFIX np: <http://www.nanopub.org/nschema#>
+PREFIX npa: <http://purl.org/nanopub/admin/>
+SELECT DISTINCT ?decl ?fsr ?principle ?rel WHERE {
+  GRAPH ?p { ?a prov:wasDerivedFrom|fip:wasDerivedFrom <%s> }
+  GRAPH ?a { ?fsr fip:recommended-by ?c }
+  BIND(IRI(REPLACE(STR(?a), "/assertion$", "")) AS ?decl)
+  FILTER NOT EXISTS { GRAPH ?h { ?x npx:invalidates ?decl } }
+  OPTIONAL {
+    GRAPH npa:graph { ?fsrnp npx:introduces|npx:describes ?fsr ; npx:hasNanopubType ?type .
+                      FILTER NOT EXISTS { ?x2 npx:invalidates ?fsrnp } }
+    FILTER(STRSTARTS(STR(?type), "https://w3id.org/fair/fip/terms/"))
+    GRAPH npa:graph { ?tnp npx:introduces ?type ; np:hasAssertion ?ta .
+                      FILTER NOT EXISTS { ?x3 npx:invalidates ?tnp } }
+    GRAPH ?ta { ?type ?rel ?principle . VALUES ?rel { fip:enables fip:supports } }
+  }
+}"""
+
+
+def _rfip_declarations(rfip_np: str) -> list[Declaration]:
+    """One declaration per (resource, principle, relation).
+
+    Recommendations are the nanopubs derived from the R-FIP nanopub (latest
+    versions only); each resource's principles are those its FIP types enable
+    or support, as stated by the type nanopubs of the FIP ontology.
+    """
+    rows = nanopub.sparql(RFIP_SPARQL % nanopub.np_id(rfip_np))
+    out = []
+    for r in rows:
+        principle = _local(r["principle"]) if r.get("principle") else ""
+        res = resource(r["fsr"])
+        if principle:
+            text, axis = principle_text(principle) or principle, "both"
+        else:
+            text, axis = "Recommended resource whose FIP types enable or support no FAIR principle", "unknown"
+        out.append(Declaration(
+            uri=r["decl"], question=principle or "unplaced", principle=principle, axis=axis, text=text,
+            no_choice=False, use={RECOMMENDED: [res]}, placement="ontology",
+            relation=_local(r["rel"]) if r.get("rel") else ""))
+    return out
