@@ -1,7 +1,9 @@
 """Facts about the thing being checked: a local folder or a Zenodo record.
 
 Only facts that can be read without judgement are collected here — identifiers,
-licences, file names, presence of an RO-Crate. Whether those facts satisfy a
+licences, file names, URLs, the repository that minted each DOI. Licences are
+normalised to SPDX ids with the SPDX list; repositories and DOI registration
+agencies come from DataCite and doi.org. Whether these facts satisfy a
 community's FIP is decided in `checks.py`.
 """
 from __future__ import annotations
@@ -12,21 +14,11 @@ import urllib.request
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
+from . import lookup
 from .nanopub import TIMEOUT
 
 SKIP_DIRS = {".git", ".venv", "venv", "node_modules", ".pixi", "__pycache__", "_build", ".snakemake", "_site"}
 MAX_FILES = 5000
-
-# Licence spellings seen in LICENSE files, CITATION.cff, codemeta and Zenodo, to one id.
-LICENCES = [
-    (r"cc[- ]?by[- ]?4\.0|creative commons attribution 4\.0|creativecommons\.org/licenses/by/4\.0", "CC-BY-4.0"),
-    (r"cc0|creative commons zero|publicdomain/zero/1\.0", "CC0-1.0"),
-    (r"\bmit\b", "MIT"),
-    (r"apache", "Apache-2.0"),
-    (r"bsd-3|bsd 3", "BSD-3-Clause"),
-    (r"gpl-3|gnu general public license v3|version 3, 29 june 2007", "GPL-3.0"),
-]
-
 
 @dataclass
 class Target:
@@ -35,12 +27,13 @@ class Target:
     title: str = ""
     object_type: str = ""                        # e.g. "dataset", "software"
     dois: list[str] = field(default_factory=list)
-    repositories: list[str] = field(default_factory=list)
+    repositories: list[str] = field(default_factory=list)       # repository names
+    repository_hosts: list[str] = field(default_factory=list)   # e.g. "zenodo.org"
+    registration_agencies: list[str] = field(default_factory=list)
     licences: list[str] = field(default_factory=list)
     access: str = ""                             # "open", "restricted", … ; "" = unknown
     files: list[str] = field(default_factory=list)
     urls: list[str] = field(default_factory=list)
-    has_ro_crate: bool = False
     notes: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict:
@@ -50,17 +43,29 @@ class Target:
 
 
 def normalise_licence(text: str) -> str:
-    t = text.lower()
-    for pattern, spdx in LICENCES:
-        if re.search(pattern, t):
-            return spdx
-    return text.strip()
+    """An SPDX id for a licence id, name, URL or licence text; the text itself if none matches."""
+    text = text.strip()
+    try:
+        if re.match(r"https?://", text):
+            return lookup.spdx_from_url(text) or text
+        return lookup.spdx_from_name(text) or lookup.spdx_in_text(text) or text
+    except lookup.LookupError_:
+        return text
 
 
-def repository_for_doi(doi: str) -> str:
-    prefix = doi.lower().split("/", 1)[0]
-    return {"10.5281": "Zenodo", "10.11582": "NIRD Research Data Archive", "10.6084": "Figshare",
-            "10.5061": "Dryad"}.get(prefix, "")
+def _add_doi_facts(t: Target) -> None:
+    """Registration agency and minting repository of each DOI (doi.org, DataCite)."""
+    for d in t.dois:
+        if ra := lookup.doi_agency(d):
+            t.registration_agencies.append(ra)
+        repo = lookup.datacite_repository(d)
+        if repo.get("name"):
+            t.repositories.append(repo["name"])
+        if repo.get("url"):
+            t.repository_hosts.append(lookup.host(repo["url"]))
+    t.registration_agencies = sorted(set(t.registration_agencies))
+    t.repositories = sorted(set(t.repositories))
+    t.repository_hosts = sorted(set(t.repository_hosts))
 
 
 def load(ref: str) -> Target:
@@ -82,13 +87,14 @@ def _zenodo(recid: str) -> Target:
     t = Target(ref=f"https://zenodo.org/records/{rec['id']}", kind="zenodo", title=md.get("title", ""))
     t.object_type = (md.get("resource_type") or {}).get("type", "")
     t.dois = [d for d in (rec.get("doi"), rec.get("conceptdoi")) if d]
-    t.repositories = ["Zenodo"]
+    t.repository_hosts = [lookup.host(t.ref)]
     lic = (md.get("license") or {}).get("id", "")
     t.licences = [normalise_licence(lic)] if lic else []
     t.access = md.get("access_right", "")
     t.files = [f["key"] for f in rec.get("files", [])]
     t.urls = [rec.get("links", {}).get("self_html", ""), *(f.get("links", {}).get("self", "") for f in rec.get("files", []))]
-    t.has_ro_crate = any(Path(f).name == "ro-crate-metadata.json" for f in t.files)
+    _add_doi_facts(t)
+    t.repository_hosts = sorted(set(t.repository_hosts) | {lookup.host(t.ref)})
     if str(rec["id"]) != str(recid):
         t.notes.append(f"Zenodo resolved {recid} to record {rec['id']} (latest version).")
     return t
@@ -104,7 +110,6 @@ def _local(root: Path) -> Target:
             if len(t.files) >= MAX_FILES:
                 t.notes.append(f"Stopped listing files at {MAX_FILES}.")
                 break
-    t.has_ro_crate = (root / "ro-crate-metadata.json").exists()
 
     cff = root / "CITATION.cff"
     if cff.exists():
@@ -129,5 +134,5 @@ def _local(root: Path) -> Target:
             t.notes.append("codemeta.json is not valid JSON.")
     t.dois = sorted(set(t.dois))
     t.licences = sorted(set(t.licences))
-    t.repositories = sorted({r for d in t.dois if (r := repository_for_doi(d))})
+    _add_doi_facts(t)
     return t
