@@ -129,5 +129,5 @@ opinions expressed are those of the authors only and do not necessarily reflect
 those of the European Union. Neither the European Union nor the granting authority
 can be held responsible for them.
 
-Science Live is a community-driven, unfunded initiative. Further funders will be
+Science Live is developed at [LifeWatch ERIC](https://www.lifewatch.eu) by Anne Fouilloux (CTO), with infrastructure operated by [VitenHub AS](https://vitenhub.no/). Further funders will be
 listed here as they support the work.
